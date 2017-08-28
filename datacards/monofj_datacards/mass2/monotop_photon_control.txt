@@ -1,0 +1,24 @@
+Control Region Datacard -- monofj_mass2 photon
+
+imax * number of bins
+jmax * number of processes minus 1
+kmax * number of nuisance parameters
+
+-------------------------------------------------------------------------------------------------
+
+shapes data_obs    monofj_mass2_photon_cr ../combined_model.root  combinedws:monofj_mass2_photon_data 
+shapes gjets   	   monofj_mass2_photon_cr ../combined_model.root  combinedws:monofj_mass2_photonModel_zjets_model 
+shapes *           monofj_mass2_photon_cr ../combined_model.root  combinedws:monofj_mass2_photon_$PROCESS combinedws:monofj_mass2_photon_$PROCESS_$SYSTEMATIC
+-------------------------------------------------------------------------------------------------
+bin 	     monofj_mass2_photon_cr
+observation  -1 
+--------------------------------------------------------------------------------------------------------------------------------------------------
+bin             		monofj_mass2_photon_cr     
+process      		         gjets            
+process      		         11               
+rate         		         1                
+------------------------------------------
+lumi     	 lnN           -                
+QCD_Norm   lnN           -                
+---------------------------------------------------------------
+# Parametric uncertainties associated to control regions fits
