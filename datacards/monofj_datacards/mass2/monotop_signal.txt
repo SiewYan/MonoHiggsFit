@@ -1,0 +1,32 @@
+Control Region Datacard -- monofj_mass2 signal
+
+imax * number of bins
+jmax * number of processes minus 1
+kmax * number of nuisance parameters
+
+-------------------------------------------------------------------------------------------------
+
+shapes data_obs    monofj_mass2_signal ../combined_model.root  combinedws:monofj_mass2_signal_fakedata 
+#shapes data_obs    monofj_mass2_signal ../combined_model.root  combinedws:monofj_mass2_signal_data 
+shapes zvv    	   monofj_mass2_signal ../combined_model.root  combinedws:monofj_mass2_signal_zjets_model 
+shapes ttbar  	   monofj_mass2_signal ../combined_model.root  combinedws:monofj_mass2_signal_ttbar_model 
+shapes wjets  	   monofj_mass2_signal ../combined_model.root  combinedws:monofj_mass2_signal_wjets_model 
+shapes signal      monofj_mass2_signal ../combined_model.root  combinedws:monofj_mass2_signal_Mres1100_Mchi100 combinedws:monofj_mass2_signal_Mres1100_Mchi100_$SYSTEMATIC
+shapes *           monofj_mass2_signal ../combined_model.root  combinedws:monofj_mass2_signal_$PROCESS combinedws:monofj_mass2_signal_$PROCESS_$SYSTEMATIC
+-------------------------------------------------------------------------------------------------
+bin 	     monofj_mass2_signal
+observation  -1 
+--------------------------------------------------------------------------------------------------------------------------------------------------
+bin             		monofj_mass2_signal            monofj_mass2_signal           monofj_mass2_signal         monofj_mass2_signal           monofj_mass2_signal          monofj_mass2_signal          monofj_mass2_signal
+process      		         wjets                    ttbar		                dibosons		             qcd		                 zvv		                 stop                    signal
+process      		         10                       2                        4                       3                       5                       1                       0
+rate         		         1                        1                        -1                      -1                      1                      -1                       -1
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+stop_Norm  lnN           -                         -                       -                       -                       -                       1.3                     -
+vv_Norm	 	 lnN	         -			                   -		                   1.3                     -		                   -                       -                       -
+QCD_Norm	 lnN	         -			                   -		                   -                       2.0		                 -                       -                       -
+sig_Norm   lnN           -                         -                       -                       -                       -                       -                       1.1
+lumi     	 lnN           -                         -                       1.1                     1.1                    1.1                      1.1                     1.1          
+btag     shape           -                         -                       1.0		                 1.0                     -                       1.0                     1.0            
+-------------------------------------------------------------------------------------------------
+# Parametric uncertainties associated to control regions fits

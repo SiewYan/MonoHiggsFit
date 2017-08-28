@@ -1,0 +1,39 @@
+>>> including systematics
+>>> method used to compute upper limit is Asymptotic
+>>> random number generator seed is 123456
+[?1034hComputing limit starting from expected outcome
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+Constraints of type RooGaussian: 67
+Constraints of type SimpleGaussianConstraint: 25
+WARNING: Best fit of asimov dataset is at r = 0.150000 (0.010000 times rMax), while it should be at zero
+Median for expected limits: 3000
+Sigma  for expected limits: 1530.64
+Constraints of type RooGaussian: 67
+Constraints of type SimpleGaussianConstraint: 25
+Constraints of type RooGaussian: 67
+Constraints of type SimpleGaussianConstraint: 25
+Restricting r to positive values.
+
+Make global fit of real data
+NLL at global minimum of data: -4.49268e-12 (r = 312.84)
+
+Make global fit of asimov data
+NLL at global minimum of asimov: -4.49268e-12 (r = 312.84)
+At r = 2682.052046:	q_mu = 0.00000	q_A  = 0.00000	CLsb = 0.50000	CLb  = 0.50000	CLs  = 1.00000
+At r = 5364.104092:	q_mu = 0.00000	q_A  = 0.00000	CLsb = 0.50000	CLb  = 0.50000	CLs  = 1.00000
+At r = 10728.208184:	q_mu = 0.00000	q_A  = 0.00000	CLsb = 0.50000	CLb  = 0.50000	CLs  = 1.00000
+At r = 21456.416368:	q_mu = 0.00000	q_A  = 0.00000	CLsb = 0.50000	CLb  = 0.50000	CLs  = 1.00000
+At r = 42912.832736:	q_mu = 0.00000	q_A  = 0.00000	CLsb = 0.50000	CLb  = 0.50000	CLs  = 1.00000
+At r = 43069.252736:	q_mu = 0.00000	q_A  = 0.00000	CLsb = 0.50000	CLb  = 0.50000	CLs  = 1.00000
+At r = 64447.459104:	q_mu = 0.00000	q_A  = 0.00000	CLsb = 0.50000	CLb  = 0.50000	CLs  = 1.00000
+At r = 75136.562288:	q_mu = 0.00000	q_A  = 0.00000	CLsb = 0.50000	CLb  = 0.50000	CLs  = 1.00000
+At r = 80481.113880:	q_mu = 0.00000	q_A  = 0.00000	CLsb = 0.50000	CLb  = 0.50000	CLs  = 1.00000
+At r = 83153.389676:	q_mu = 0.00000	q_A  = 0.00000	CLsb = 0.50000	CLb  = 0.50000	CLs  = 1.00000
+At r = 84489.527574:	q_mu = 0.00000	q_A  = 0.00000	CLsb = 0.50000	CLb  = 0.50000	CLs  = 1.00000
+At r = 85157.596523:	q_mu = 0.00000	q_A  = 0.00000	CLsb = 0.50000	CLb  = 0.50000	CLs  = 1.00000
+At r = 85491.630997:	q_mu = 0.00000	q_A  = 0.00000	CLsb = 0.50000	CLb  = 0.50000	CLs  = 1.00000
+
+ -- Asymptotic -- 
+Observed Limit: r < 85491.6310
+
+Done in 0.83 min (cpu), 0.83 min (real)
