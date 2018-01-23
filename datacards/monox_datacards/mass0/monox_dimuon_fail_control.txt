@@ -28,7 +28,6 @@ veto_tau   lnN          1.03      1.03      1.03      1.03
 met        lnN          1.05      1.05      1.05      1.05
 trig_met   lnN          -         1.01      1.01      1.01
 track_mu   lnN          1.01      1.01      1.01      1.01
-zjethf     lnN          0.95      -         -         -
 -------------------------------------------------------------------------------------------------
 # Parametric uncertainties associated to control regions fits
 mass0_zjetseff param 0.0346 0.00174
