@@ -30,16 +30,13 @@ veto_tau   lnN          1.03      1.03      1.03      1.03      1.03      1.03
 met        lnN          1.05      1.05      1.05      1.05      1.05      1.05
 trig_met   lnN          1.01      1.01      1.01      -         1.01      -
 track_mu   lnN          1.005     1.005     1.005     1.005     1.005     1.005
-zjethf     lnN          0.95      -         -         -         -         -
-wjethf     lnN          -         -         -         0.95      -         -
 -------------------------------------------------------------------------------------------------
 # Parametric uncertainties associated to control regions fits
-ttbareff param 0.1678 0.0001
-ttbareffSF  extArg 1.03 [0.96,1.1]
-ttbarfailmuon rateParam tmn_fail ttbar ((1.0-@0*@1)/(1.0-@1)) ttbareffSF,ttbareff
-wjetseff param 0.0316 0.001264
-wlneffSF  extArg 1.0 [0.0,10.0]
+mass3_ttbareff param 0.1678 0.0001
+mass3_ttbareffSF  extArg 1.03 [0.96,1.1]
+ttbarfailmuon rateParam tmn_fail ttbar ((1.0-@0*@1)/(1.0-@1)) mass3_ttbareffSF,mass3_ttbareff
+mass3_wjetseff param 0.0316 0.001264
+mass3_wlneffSF  extArg 1.0 [0.0,10.0]
 wlnfailmuon_2 rateParam tmn_fail wjets ((1.0-@0*@1)/(1.0-@1)) wlneffSF,wjetseff
-mettrig param 0.0 1
 btag param 0.0 1
 mistag param 0.0 1
