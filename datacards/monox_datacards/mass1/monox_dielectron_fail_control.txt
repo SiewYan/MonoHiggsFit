@@ -29,16 +29,14 @@ veto_tau   lnN            1.03      1.03      1.03      1.03
 met        lnN            1.05      1.05      1.05      1.05
 trig_met   lnN            -         1.01      1.01      1.01
 track_ele  lnN            1.01      1.01      1.01      1.01
-zjethf     lnN            0.95      -         -         -
 -------------------------------------------------------------------------------------------------
 # Parametric uncertainties associated to control regions fits
-zjetseff param 0.0346 0.00174
-zlleffSF  extArg 1.0 [0.0,10.0]
-zllfaildielectron rateParam zee_fail zll ((1.0-@0*@1)/(1.0-@1)) zlleffSF,zjetseff
+mass1_zjetseff param 0.0346 0.00174
+mass1_zlleffSF  extArg 1.0 [0.0,10.0]
+zllfaildielectron rateParam zee_fail zll ((1.0-@0*@1)/(1.0-@1)) mass1_zlleffSF,mass1_zjetseff
 monox_mass1_stat_error_dielectronfailModelCR_bin0 param 0.0 1
 monox_mass1_stat_error_dielectronfailModelCR_bin1 param 0.0 1
 monox_mass1_stat_error_dielectronfailModelCR_bin2 param 0.0 1
 monox_mass1_stat_error_dielectronfailModelCR_bin3 param 0.0 1
-mettrig param 0.0 1
 btag param 0.0 1
 mistag param 0.0 1
