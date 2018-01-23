@@ -25,12 +25,13 @@ naming={
     "monox_singlemuonw_fail_control"       : ["wmn_fail"],
 }
 command=["combineCards.py"]
-for datacard in os.listdir("./"+args.massbin):
+for datacard in os.listdir("./"):
     if datacard.endswith(".txt"):
         if datacard == "monox_datacard.txt" or datacard == "combined_mass0.txt" or not datacard.startswith('monox'):
             continue
         #print datacard.split('.')[0]
-        command.append(naming[datacard.split('.')[0]][0]+"=./"+args.massbin+"/"+datacard)
+        command.append(args.massbin+"_"+naming[datacard.split('.')[0]][0]+"=./"+datacard)
+        #command.append(naming[datacard.split('.')[0]][0]+"=./"+args.massbin+"/"+datacard)
         
 command.append("> combine_"+args.massbin+".txt")
 print ' '.join(command)
