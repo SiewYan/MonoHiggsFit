@@ -1,10 +1,12 @@
 #########################################################################################
 # Setup the basics ----> USER DEFINED SECTION HERE ------------------------------------//
 fOutName = "combined_model.root"  # --> Output file
-fName    = "mono-x.root"  # --> input file (i.e output from previous)
+fName    = "mono-x0.root"  # --> input file (i.e output from previous)
 #fName    = "mono-x-smoothed.root"  # --> input file (i.e output from previous)
-categories = ["monohiggs"] # --> Should be labeled as in original config 
-controlregions_def = ["Z_constraints","W_constraints","Top_constraints"] # --> configuration configs for control region fits. 
+#categories = ["monohiggs"] # --> Should be labeled as in original config 
+categories = ["monox_mass0","monox_mass0_fail"]
+#categories = ["monox_doublebp_mass0_category"]
+controlregions_def = ["Z_constraints_monox","W_constraints_monox","Top_constraints_monox"] # --> configuration configs for control region fits. 
 # Note if one conrol region def depends on another (i,e if setDependant() is called) it must come AFTER its 
 # the one it depends on in this list!
 #--------------------------------------------------------------------------------------//
@@ -52,13 +54,15 @@ cmb_categories = []
 
 for crd,crn in enumerate(controlregions_def):
 	x = __import__(crn)
-        for cid,cn in enumerate(categories): 
+        for cid,cn in enumerate(categories):
 		_fDir = _fOut.mkdir("%s_category_%s"%(crn,cn))
 		cmb_categories.append(x.cmodel(cn,crn,_f,_fDir,out_ws,diag_combined))
 
 for cid,cn in enumerate(cmb_categories):
+	print "cid = ", cid
+	print "cn = ", cn
 	cn.init_channels()
-        channels = cn.ret_channels()
+	channels = cn.ret_channels()
 
 # Save a Pre-fit snapshot
 out_ws.saveSnapshot("PRE_EXT_FIT_Clean",out_ws.allVars()) 
