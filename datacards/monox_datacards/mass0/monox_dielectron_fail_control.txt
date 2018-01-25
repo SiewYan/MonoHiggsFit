@@ -5,9 +5,9 @@ jmax * number of processes minus 1
 kmax * number of nuisance parameters
 
 -------------------------------------------------------------------------------------------------
-shapes *         zee_fail  ../../../combined_model.root combinedws:monox_mass0_dielectron_fail_$PROCESS combinedws:monox_mass0_dielectron_fail_$PROCESS_$SYSTEMATIC
-shapes data_obs  zee_fail  ../../../combined_model.root combinedws:monox_mass0_dielectron_fail_data
-shapes zll       zee_fail  ../../../combined_model.root combinedws:monox_mass0_dielectronfailModel_zjets_model
+shapes *         zee_fail  ../../../combined_model.root combinedws:monox_mass0_fail_dielectron_$PROCESS combinedws:monox_mass0_fail_dielectron_$PROCESS_$SYSTEMATIC
+shapes data_obs  zee_fail  ../../../combined_model.root combinedws:monox_mass0_fail_dielectron_data
+shapes zll       zee_fail  ../../../combined_model.root combinedws:monox_mass0_fail_dielectronModel_zjets_model
 -------------------------------------------------------------------------------------------------
 bin 	     zee_fail
 observation  -1 

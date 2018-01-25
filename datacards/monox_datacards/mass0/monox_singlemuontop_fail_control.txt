@@ -5,10 +5,10 @@ jmax * number of processes minus 1
 kmax * number of nuisance parameters
 
 -------------------------------------------------------------------------------------------------
-shapes *         tmn_fail  ../../../combined_model.root combinedws:monox_mass0_singlemuontop_fail_$PROCESS combinedws:monox_mass0_singlemuontop_fail_$PROCESS_$SYSTEMATIC
-shapes data_obs  tmn_fail  ../../../combined_model.root combinedws:monox_mass0_singlemuontop_fail_data
-shapes wjets     tmn_fail  ../../../combined_model.root combinedws:monox_mass0_singlemuontopwfailModel_wjets_model
-shapes ttbar     tmn_fail  ../../../combined_model.root combinedws:monox_mass0_singlemuontopfailModel_ttbar_model
+shapes *         tmn_fail  ../../../combined_model.root combinedws:monox_mass0_fail_singlemuontop_$PROCESS combinedws:monox_mass0_fail_singlemuontop_$PROCESS_$SYSTEMATIC
+shapes data_obs  tmn_fail  ../../../combined_model.root combinedws:monox_mass0_fail_singlemuontop_data
+shapes wjets     tmn_fail  ../../../combined_model.root combinedws:monox_mass0_fail_singlemuontopwModel_wjets_model
+shapes ttbar     tmn_fail  ../../../combined_model.root combinedws:monox_mass0_fail_singlemuontopModel_ttbar_model
 -------------------------------------------------------------------------------------------------
 bin 	     tmn_fail
 observation  -1 
