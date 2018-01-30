@@ -27,7 +27,6 @@ mistag     shape          -                             1.0                 1.0 
 trig_ele   lnN            1.01      1.01      1.01      1.01
 veto_tau   lnN            1.03      1.03      1.03      1.03
 met        lnN            1.05      1.05      1.05      1.05
-trig_met   lnN            -         1.01      1.01      1.01
 track_ele  lnN            1.01      1.01      1.01      1.01
 -------------------------------------------------------------------------------------------------
 # Parametric uncertainties associated to control regions fits
