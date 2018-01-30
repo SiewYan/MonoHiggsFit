@@ -1,20 +1,23 @@
 #!/bin/bash
 
 
-samples_2hdm=(hsZp_1000_50_200)
+samples_2hdm=(hsZp_1000_50_200 hsZp_1000_50_300)
 #samples_2hdm=(BarZp-500-1000)
 
 echo "med hs dm twosigdown onesigdown exp onesigup twosigup" > limits_hsZp.txt
-
 
 for k in "${samples_2hdm[@]}"; do
     mediatordm=${k#'hsZp-'} #500-1000
     branchingratio='1.0'
     #mediator=${mediatordm%-*} #500
     #dm=`echo ${mediatordm#${mediator}-}` #1500
-    mediator=`(echo $mediatordm | awk -F '_' '{print$1}')`
-    medhs=`(echo $mediatordm | awk -F '_' '{print$2}')`
-    dm=`(echo $mediatordm | awk -F '_' '{print$3}')`
+    mediator=`(echo $mediatordm | awk -F '_' '{print$2}')`
+    medhs=`(echo $mediatordm | awk -F '_' '{print$3}')`
+    dm=`(echo $mediatordm | awk -F '_' '{print$4}')`
+
+    #echo "mediator = $mediator"
+    #echo "medhs = $medhs"
+    #echo "dm = $dm"
 
 
     cp combine_mass0.txt combined.txt
