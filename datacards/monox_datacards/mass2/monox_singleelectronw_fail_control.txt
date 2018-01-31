@@ -5,9 +5,9 @@ jmax * number of processes minus 1
 kmax * number of nuisance parameters
 
 -------------------------------------------------------------------------------------------------
-shapes *         wen_fail  ../../../combined_model.root combinedws:monox_mass2_singleelectronw_fail_$PROCESS combinedws:monox_mass2_singleelectronw_fail_$PROCESS_$SYSTEMATIC
-shapes data_obs  wen_fail  ../../../combined_model.root combinedws:monox_mass2_singleelectronw_fail_data
-shapes wjets     wen_fail  ../../../combined_model.root combinedws:monox_mass2_singleelectronwfailModel_wjets_model
+shapes *         wen_fail  ../../../combined_model.root combinedws:monox_mass2_fail_singleelectronw_$PROCESS combinedws:monox_mass2_fail_singleelectronw_$PROCESS_$SYSTEMATIC
+shapes data_obs  wen_fail  ../../../combined_model.root combinedws:monox_mass2_fail_singleelectronw_data
+shapes wjets     wen_fail  ../../../combined_model.root combinedws:monox_mass2_fail_singleelectronwModel_wjets_model
 -------------------------------------------------------------------------------------------------
 bin 	     wen_fail
 observation  -1 
@@ -28,7 +28,6 @@ mistag     shape        1.0       1.0       1.0       -         1.0       1.0
 trig_ele   lnN          1.01      1.01      1.01      1.01      1.01      1.01
 veto_tau   lnN          1.03      1.03      1.03      1.03      1.03      1.03
 met        lnN          1.05      1.05      1.05      1.05      1.05      1.05
-trig_met   lnN          1.01      1.01      1.01      -         1.01      1.01
 track_ele  lnN          1.005     1.005     1.005     1.005     1.005     1.005
 -------------------------------------------------------------------------------------------------
 # Parametric uncertainties associated to control regions fits

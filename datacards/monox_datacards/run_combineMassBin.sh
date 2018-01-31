@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "Combining datacard-let into combine_massX.txt in each massbin folder"
 dir=`pwd`
 for massbin in mass0 mass1 mass2 mass3
 do
@@ -11,4 +12,4 @@ chmod 775 run.sh
 rm massbin_combine.py
 sh run.sh
 done
-echo "Copy the output and execute in terminal, sorry, IO is not working"
+echo "DONE"

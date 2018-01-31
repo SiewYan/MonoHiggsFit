@@ -25,8 +25,8 @@ systematics=["btag","mistag"]
 #  OPTIONAL --> 'extra_cuts': additional cuts maybe specific to this control region (eg ptpho cuts) if this key is missing, the code will not complain   
  
 monox_doublebp_mass1_category = {
-	    'name':"monox_doublebp_mass1"
-            ,'in_file_name':"/uscms_data/d3/matteoc/panda/v_8026_0_4/flat//limits//fittingForest_all.root"
+	    'name':"monox_mass1"
+            ,'in_file_name':"/uscms_data/d1/shoh/panda/v_8029_DarkHiggs_v2/flat/limits/fittingForest_all.root"
             ,"cutstring":"n2ddt56<0 && fjmass>75 && fjmass<100"
             ,"varstring":["min(999.9999,met)",200,1000]
        	    ,"weightname":"weight"
@@ -46,50 +46,8 @@ monox_doublebp_mass1_category = {
 		  ,"QCD_signal"		       :['signal','qcd',1,0]
 		  ,"Data_signal"	       :['signal','data',0,0]
 		  # signals 
-                  ,"ZpA0_600_signal"       :['signal','ZpA0-600-300_signal',1,1]
-                  ,"ZpA0_800_signal"       :['signal','ZpA0-800-300_signal',1,1]
-                  ,"ZpA0_1000_signal"      :['signal','ZpA0-1000-300_signal',1,1]
-                  ,"ZpA0_1400_signal"      :['signal','ZpA0-1400-300_signal',1,1]
-                  ,"ZpA0_1700_signal"      :['signal','ZpA0-1700-300_signal',1,1]
-                  ,"ZpA0_2000_signal"      :['signal','ZpA0-2000-300_signal',1,1]
-                  ,"ZpA0_2500_signal"      :['signal','ZpA0-2500-300_signal',1,1]
-                  ,"BarZp_10_1_signal"         :['signal','BarZp-10-1_signal',1,1] 
-                  ,"BarZp_10_10_signal"        :['signal','BarZp-10-10_signal',1,1] 
-                  ,"BarZp_10_50_signal"        :['signal','BarZp-10-50_signal',1,1] 
-                  ,"BarZp_10_150_signal"       :['signal','BarZp-10-150_signal',1,1] 
-                  ,"BarZp_10_500_signal"       :['signal','BarZp-10-500_signal',1,1] 
-#                  ,"BarZp_10_1000_signal"      :['signal','BarZp-10-1000_signal',1,1] 
-                  ,"BarZp_15_10_signal"        :['signal','BarZp-15-10_signal',1,1] 
-                  ,"BarZp_20_1_signal"         :['signal','BarZp-20-1_signal',1,1] 
-                  ,"BarZp_50_1_signal"         :['signal','BarZp-50-1_signal',1,1] 
-                  ,"BarZp_50_10_signal"        :['signal','BarZp-50-10_signal',1,1] 
-                  ,"BarZp_50_50_signal"        :['signal','BarZp-50-50_signal',1,1] 
-                  ,"BarZp_95_50_signal"        :['signal','BarZp-95-50_signal',1,1] 
-                  ,"BarZp_100_1_signal"        :['signal','BarZp-100-1_signal',1,1] 
-                  ,"BarZp_100_10_signal"       :['signal','BarZp-100-10_signal',1,1] 
-                  ,"BarZp_200_1_signal"        :['signal','BarZp-200-1_signal',1,1] 
-                  ,"BarZp_200_50_signal"       :['signal','BarZp-200-50_signal',1,1] 
-                  ,"BarZp_200_150_signal"      :['signal','BarZp-200-150_signal',1,1] 
-                  ,"BarZp_295_150_signal"      :['signal','BarZp-295-150_signal',1,1] 
-                  ,"BarZp_300_1_signal"        :['signal','BarZp-300-1_signal',1,1] 
-                  ,"BarZp_300_50_signal"       :['signal','BarZp-300-50_signal',1,1] 
-                  ,"BarZp_500_1_signal"        :['signal','BarZp-500-1_signal',1,1] 
-                  ,"BarZp_500_150_signal"      :['signal','BarZp-500-150_signal',1,1] 
-#                  ,"BarZp_500_500_signal"      :['signal','BarZp-500-500_signal',1,1] 
-                  ,"BarZp_995_500_signal"      :['signal','BarZp-995-500_signal',1,1] 
-                  ,"BarZp_1000_1_signal"       :['signal','BarZp-1000-1_signal',1,1] 
-                  ,"BarZp_1000_150_signal"     :['signal','BarZp-1000-150_signal',1,1] 
-                  ,"BarZp_1000_1000_signal"    :['signal','BarZp-1000-1000_signal',1,1] 
-                  ,"BarZp_1995_1000_signal"    :['signal','BarZp-1995-1000_signal',1,1] 
-                  ,"BarZp_2000_1_signal"       :['signal','BarZp-2000-1_signal',1,1] 
-#                  ,"BarZp_2000_500_signal"     :['signal','BarZp-2000-500_signal',1,1] 
-                  ,"BarZp_10000_1_signal"      :['signal','BarZp-10000-1_signal',1,1] 
-                  ,"BarZp_10000_10_signal"     :['signal','BarZp-10000-10_signal',1,1] 
-                  ,"BarZp_10000_50_signal"     :['signal','BarZp-10000-50_signal',1,1] 
-                  ,"BarZp_10000_150_signal"    :['signal','BarZp-10000-150_signal',1,1] 
-                  ,"BarZp_10000_500_signal"    :['signal','BarZp-10000-500_signal',1,1] 
-#                  ,"BarZp_10000_1000_signal"    :['signal','BarZp-10000-1000_signal',1,1] 
-
+                  ,"hsZp_1000_50_200_signal"    :['signal','hsZp_1000_50_200_signal',1,1]
+                  ,"hsZp_1000_50_300_signal"    :['signal','hsZp_1000_50_300_signal',1,1]
 
 		  # Di muon-Control
 #                  ,"VH_zmm"                    :['dimuon','vh',1,0] 
@@ -103,13 +61,13 @@ monox_doublebp_mass1_category = {
 		  # Single muon (top) control
 #                  ,"VH_tm"                     :['singlemuontop','vh',1,0] 
 #                  ,"ttH_tm"                    :['singlemuontop','tth',1,0] 
-                  ,"Zll_tm"       	       :['singlemuontop','zll',1,0]
- 		  ,"Wlv_tm"                    :['singlemuontop','wjets',1,0]
-		  ,"Diboson_tm"                :['singlemuontop','dibosons',1,0]
-		  ,"ttbar_tm"                  :['singlemuontop','ttbar',1,1]
-		  ,"ST_tm"                     :['singlemuontop','stop',1,0]
-		  ,"QCD_tm"                    :['singlemuontop','qcd',1,0]
-		  ,"Data_tm"        	       :['singlemuontop','data',0,0]
+                  ,"Zll_tmn"       	       :['singlemuontop','zll',1,0]
+ 		  ,"Wlv_tmn"                    :['singlemuontop','wjets',1,0]
+		  ,"Diboson_tmn"                :['singlemuontop','dibosons',1,0]
+		  ,"ttbar_tmn"                  :['singlemuontop','ttbar',1,1]
+		  ,"ST_tmn"                     :['singlemuontop','stop',1,0]
+		  ,"QCD_tmn"                    :['singlemuontop','qcd',1,0]
+		  ,"Data_tmn"        	       :['singlemuontop','data',0,0]
 
                    # Single muon (w) control
 #                  ,"VH_wmn"                    :['singlemuonw','vh',1,0] 
@@ -135,13 +93,13 @@ monox_doublebp_mass1_category = {
 		  # Single electron (top) control
 #                  ,"VH_te"                     :['singleelectrontop','vh',1,0] 
 #                  ,"ttH_te"                    :['singleelectrontop','tth',1,0] 
-                  ,"Zll_te"                    :['singleelectrontop','zll',1,0]
-                  ,"Wlv_te"                    :['singleelectrontop','wjets',1,0]
-		  ,"Diboson_te"                :['singleelectrontop','dibosons',1,0]
-		  ,"ttbar_te"                  :['singleelectrontop','ttbar',1,0]
-		  ,"ST_te"                     :['singleelectrontop','stop',1,0]
-		  ,"QCD_te"                    :['singleelectrontop','qcd',1,0]
-		  ,"Data_te"                   :['singleelectrontop','data',0,0]
+                  ,"Zll_ten"                    :['singleelectrontop','zll',1,0]
+                  ,"Wlv_ten"                    :['singleelectrontop','wjets',1,0]
+		  ,"Diboson_ten"                :['singleelectrontop','dibosons',1,0]
+		  ,"ttbar_ten"                  :['singleelectrontop','ttbar',1,0]
+		  ,"ST_ten"                     :['singleelectrontop','stop',1,0]
+		  ,"QCD_ten"                    :['singleelectrontop','qcd',1,0]
+		  ,"Data_ten"                   :['singleelectrontop','data',0,0]
 
                    # Single electron (w) control
 #                  ,"VH_wen"                    :['singleelectronw','vh',1,0] 
@@ -155,8 +113,8 @@ monox_doublebp_mass1_category = {
     }
 }
 monox_doublebf_mass1_category = {
-	    'name':"monox_doublebf_mass1"
-            ,'in_file_name':"/uscms_data/d3/matteoc/panda/v_8026_0_4/flat//limits//fittingForest_all.root"
+	    'name':"monox_mass1_fail"
+            ,'in_file_name':"/uscms_data/d1/shoh/panda/v_8029_DarkHiggs_v2/flat/limits/fittingForest_all.root"
             ,"cutstring":"n2ddt56<0 && fjmass>75 && fjmass<100"
             ,"varstring":["min(999.9999,met)",200,1000]
        	    ,"weightname":"weight"
@@ -175,49 +133,8 @@ monox_doublebf_mass1_category = {
 		  ,"ST_signal_fail"                 :['signal','stop',1,0]
 		  ,"QCD_signal_fail"		       :['signal','qcd',1,0]
 		  ,"Data_signal_fail"	       :['signal','data',0,0]
-                  ,"ZpA0_600_signal_fail"       :['signal','ZpA0-600-300_signal',1,1]
-                  ,"ZpA0_800_signal_fail"       :['signal','ZpA0-800-300_signal',1,1]
-                  ,"ZpA0_1000_signal_fail"      :['signal','ZpA0-1000-300_signal',1,1]
-                  ,"ZpA0_1400_signal_fail"      :['signal','ZpA0-1400-300_signal',1,1]
-                  ,"ZpA0_1700_signal_fail"      :['signal','ZpA0-1700-300_signal',1,1]
-                  ,"ZpA0_2000_signal_fail"      :['signal','ZpA0-2000-300_signal',1,1]
-                  ,"ZpA0_2500_signal_fail"      :['signal','ZpA0-2500-300_signal',1,1]
-                  ,"BarZp_10_1_signal_fail"         :['signal','BarZp-10-1_signal',1,1] 
-                  ,"BarZp_10_10_signal_fail"        :['signal','BarZp-10-10_signal',1,1] 
-                  ,"BarZp_10_50_signal_fail"        :['signal','BarZp-10-50_signal',1,1] 
-                  ,"BarZp_10_150_signal_fail"       :['signal','BarZp-10-150_signal',1,1] 
-                  ,"BarZp_10_500_signal_fail"       :['signal','BarZp-10-500_signal',1,1] 
-#                  ,"BarZp_10_1000_signal_fail"      :['signal','BarZp-10-1000_signal',1,1] 
-                  ,"BarZp_15_10_signal_fail"        :['signal','BarZp-15-10_signal',1,1] 
-                  ,"BarZp_20_1_signal_fail"         :['signal','BarZp-20-1_signal',1,1] 
-                  ,"BarZp_50_1_signal_fail"         :['signal','BarZp-50-1_signal',1,1] 
-                  ,"BarZp_50_10_signal_fail"        :['signal','BarZp-50-10_signal',1,1] 
-                  ,"BarZp_50_50_signal_fail"        :['signal','BarZp-50-50_signal',1,1] 
-                  ,"BarZp_95_50_signal_fail"        :['signal','BarZp-95-50_signal',1,1] 
-                  ,"BarZp_100_1_signal_fail"        :['signal','BarZp-100-1_signal',1,1] 
-                  ,"BarZp_100_10_signal_fail"       :['signal','BarZp-100-10_signal',1,1] 
-                  ,"BarZp_200_1_signal_fail"        :['signal','BarZp-200-1_signal',1,1] 
-                  ,"BarZp_200_50_signal_fail"       :['signal','BarZp-200-50_signal',1,1] 
-                  ,"BarZp_200_150_signal_fail"      :['signal','BarZp-200-150_signal',1,1] 
-                  ,"BarZp_295_150_signal_fail"      :['signal','BarZp-295-150_signal',1,1] 
-                  ,"BarZp_300_1_signal_fail"        :['signal','BarZp-300-1_signal',1,1] 
-                  ,"BarZp_300_50_signal_fail"       :['signal','BarZp-300-50_signal',1,1] 
-                  ,"BarZp_500_1_signal_fail"        :['signal','BarZp-500-1_signal',1,1] 
-                  ,"BarZp_500_150_signal_fail"      :['signal','BarZp-500-150_signal',1,1] 
-#                  ,"BarZp_500_500_signal_fail"      :['signal','BarZp-500-500_signal',1,1] 
-                  ,"BarZp_995_500_signal_fail"      :['signal','BarZp-995-500_signal',1,1] 
-                  ,"BarZp_1000_1_signal_fail"       :['signal','BarZp-1000-1_signal',1,1] 
-                  ,"BarZp_1000_150_signal_fail"     :['signal','BarZp-1000-150_signal',1,1] 
-                  ,"BarZp_1000_1000_signal_fail"    :['signal','BarZp-1000-1000_signal',1,1] 
-                  ,"BarZp_1995_1000_signal_fail"    :['signal','BarZp-1995-1000_signal',1,1] 
-                  ,"BarZp_2000_1_signal_fail"       :['signal','BarZp-2000-1_signal',1,1] 
-#                  ,"BarZp_2000_500_signal_fail"     :['signal','BarZp-2000-500_signal',1,1] 
-                  ,"BarZp_10000_1_signal_fail"      :['signal','BarZp-10000-1_signal',1,1] 
-                  ,"BarZp_10000_10_signal_fail"     :['signal','BarZp-10000-10_signal',1,1] 
-                  ,"BarZp_10000_50_signal_fail"     :['signal','BarZp-10000-50_signal',1,1] 
-                  ,"BarZp_10000_150_signal_fail"    :['signal','BarZp-10000-150_signal',1,1] 
-                  ,"BarZp_10000_500_signal_fail"    :['signal','BarZp-10000-500_signal',1,1] 
-#                  ,"BarZp_10000_1000_signal_fail"    :['signal','BarZp-10000-1000_signal',1,1] 
+                  ,"hsZp_1000_50_200_signal_fail"    :['signal','hsZp_1000_50_200_signal',1,1]
+                  ,"hsZp_1000_50_300_signal_fail"    :['signal','hsZp_1000_50_300_signal',1,1]
 
 		  # Di muon-Control_fail
                   ,"Zll_zmm_fail"	       :['dimuon','zll',1,1]
@@ -229,13 +146,13 @@ monox_doublebf_mass1_category = {
 		  ,"Data_zmm_fail"    	       :['dimuon','data',0,0]
 
 		  # Single muon (top) fail control
-                  ,"Zll_tm_fail"       	       :['singlemuontop','zll',1,0]
- 		  ,"Wlv_tm_fail"               :['singlemuontop','wjets',1,0]
-		  ,"Diboson_tm_fail"           :['singlemuontop','dibosons',1,0]
-		  ,"ttbar_tm_fail"             :['singlemuontop','ttbar',1,1]
-		  ,"ST_tm_fail"                :['singlemuontop','stop',1,0]
-		  ,"QCD_tm_fail"               :['singlemuontop','qcd',1,0]
-		  ,"Data_tm_fail"     	       :['singlemuontop','data',0,0]
+                  ,"Zll_tmn_fail"       	       :['singlemuontop','zll',1,0]
+ 		  ,"Wlv_tmn_fail"               :['singlemuontop','wjets',1,0]
+		  ,"Diboson_tmn_fail"           :['singlemuontop','dibosons',1,0]
+		  ,"ttbar_tmn_fail"             :['singlemuontop','ttbar',1,1]
+		  ,"ST_tmn_fail"                :['singlemuontop','stop',1,0]
+		  ,"QCD_tmn_fail"               :['singlemuontop','qcd',1,0]
+		  ,"Data_tmn_fail"     	       :['singlemuontop','data',0,0]
 
                    # Single muon (w) fail control
                   ,"Zll_wmn_fail"     	       :['singlemuonw','zll',1,0]
@@ -256,13 +173,13 @@ monox_doublebf_mass1_category = {
 		  ,"Data_zee_fail"	       :['dielectron','data',0,0]
 
 		  # Single electron (top) fail control
-                  ,"Zll_te_fail"               :['singleelectrontop','zll',1,0]
-                  ,"Wlv_te_fail"               :['singleelectrontop','wjets',1,0]
-		  ,"Diboson_te_fail"           :['singleelectrontop','dibosons',1,0]
-		  ,"ttbar_te_fail"             :['singleelectrontop','ttbar',1,0]
-		  ,"ST_te_fail"                :['singleelectrontop','stop',1,0]
-		  ,"QCD_te_fail"               :['singleelectrontop','qcd',1,0]
-		  ,"Data_te_fail"              :['singleelectrontop','data',0,0]
+                  ,"Zll_ten_fail"               :['singleelectrontop','zll',1,0]
+                  ,"Wlv_ten_fail"               :['singleelectrontop','wjets',1,0]
+		  ,"Diboson_ten_fail"           :['singleelectrontop','dibosons',1,0]
+		  ,"ttbar_ten_fail"             :['singleelectrontop','ttbar',1,0]
+		  ,"ST_ten_fail"                :['singleelectrontop','stop',1,0]
+		  ,"QCD_ten_fail"               :['singleelectrontop','qcd',1,0]
+		  ,"Data_ten_fail"              :['singleelectrontop','data',0,0]
 
                    # Single electron (w) fail control
                   ,"Zll_wen_fail"              :['singleelectronw','zll',1,0]

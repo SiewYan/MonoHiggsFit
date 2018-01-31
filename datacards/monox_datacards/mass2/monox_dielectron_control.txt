@@ -24,10 +24,10 @@ sf_ele     lnN            1.02      			1.02 	            1.02		         1.02
 ca15_jec   lnN		  -         			1.04	            1.04		         1.04
 btag       shape          -          			1.0	            -    		         1.0
 mistag     shape	  -          			1.0	            -			         1.0
-trig_ele   lnN		  1.01                          1.01                1.01                         1.01
-veto_tau   lnN		  1.03                          1.03                1.03                         1.03
-met        lnN		  1.05                          1.05                1.05                         1.05
-track_ele  lnN		  1.01                          1.01                1.01                         1.01
+trig_ele   lnN		  1.01      1.01      1.01      1.01
+veto_tau   lnN		  1.03      1.03      1.03      1.03
+met        lnN		  1.05      1.05      1.05      1.05
+track_ele  lnN		  1.01      1.01      1.01      1.01
 -------------------------------------------------------------------------------------------------
 # Parametric uncertainties associated to control regions fits
 mass2_zjetseff param 0.0346 0.00174

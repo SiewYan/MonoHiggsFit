@@ -14,7 +14,8 @@ def makeTop(cid,_fOut,newName,targetmc,controlmc,systs=None,doSJ=False):
 
   if not(systs==None):
     for uncert in ['btag','mistag']:
-      TopScalesUp = systs['targetmc%sUp'%(uncert)].Clone(); TopScalesUp.SetName(newName+"_weights_%s_%s_Up"%(cid,uncert))
+      TopScalesUp = systs['targetmc%sUp'%(uncert)].Clone(); 
+      TopScalesUp.SetName(newName+"_weights_%s_%s_Up"%(cid,uncert))
       TopScalesUp.Divide(systs['controlmc%sUp'%(uncert)])
 
       TopScalesDown = systs['targetmc%sDown'%(uncert)].Clone(); TopScalesDown.SetName(newName+"_weights_%s_%s_Down"%(cid,uncert))

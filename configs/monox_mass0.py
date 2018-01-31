@@ -26,7 +26,7 @@ systematics=["btag","mistag"]
  
 monox_doublebp_mass0_category = {
 	    'name':"monox_mass0"
-            ,'in_file_name':"/uscms_data/d1/shoh/panda/v_8029_DarkHiggs/flat/limits/nddt_v2/fittingForest_all.root"
+            ,'in_file_name':"/uscms_data/d1/shoh/panda/v_8029_DarkHiggs_v2/flat/limits/fittingForest_all.root"
             ,"cutstring":"n2ddt56<0 && fjmass>50 && fjmass<75"
             ,"varstring":["min(999.9999,met)",200,1000]
        	    ,"weightname":"weight"
@@ -114,7 +114,7 @@ monox_doublebp_mass0_category = {
 }
 monox_doublebf_mass0_category = {
 	    'name':"monox_mass0_fail"
-            ,'in_file_name':"/uscms_data/d1/shoh/panda/v_8029_DarkHiggs/flat/limits/nddt_v2/fittingForest_all.root"
+            ,'in_file_name':"/uscms_data/d1/shoh/panda/v_8029_DarkHiggs_v2/flat/limits/fittingForest_all.root"
             ,"cutstring":"n2ddt56<0 && fjmass>50 && fjmass<75"
             ,"varstring":["min(999.9999,met)",200,1000]
        	    ,"weightname":"weight"

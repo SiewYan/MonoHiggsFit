@@ -7,6 +7,7 @@ model = "zjets"
 def cmodel(cid,nam,_f,_fOut, out_ws, diag):
   
   # Some setup
+  print "cid = ", cid
   _fin = _f.Get("category_%s"%cid)
   _wspace = _fin.Get("wspace_%s"%cid)
 

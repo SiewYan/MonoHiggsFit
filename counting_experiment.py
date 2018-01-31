@@ -543,6 +543,7 @@ class Category:
      ch.set_control_region(cr)
      if cr.has_background(): ch.add_background(cr.ret_background())
      ch.set_label(sample) # should import the sample category label
+     print "sample = ", sample
      ch.set_initY(self._target_datasetname)
      ch.set_sfactor(cr.ret_sfactor(i))
      # This has to the the last thing 
