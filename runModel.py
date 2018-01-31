@@ -1,10 +1,11 @@
 #########################################################################################
 # Setup the basics ----> USER DEFINED SECTION HERE ------------------------------------//
+RUN="2"
 fOutName = "combined_model.root"  # --> Output file
-fName    = "mono-x1.root"  # --> input file (i.e output from previous)
+fName    = "mono-x"+RUN+".root"  # --> input file (i.e output from previous)
 #fName    = "mono-x-smoothed.root"  # --> input file (i.e output from previous)
 #categories = ["monohiggs"] # --> Should be labeled as in original config 
-categories = ["monox_mass1","monox_mass1_fail"]
+categories = ["monox_mass"+RUN,"monox_mass"+RUN+"_fail"]
 #categories = ["monox_doublebp_mass0_category"]
 controlregions_def = ["Z_constraints_monox","W_constraints_monox","Top_constraints_monox"] # --> configuration configs for control region fits. 
 # Note if one conrol region def depends on another (i,e if setDependant() is called) it must come AFTER its 
