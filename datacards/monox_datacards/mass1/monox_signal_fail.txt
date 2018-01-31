@@ -5,12 +5,12 @@ jmax * number of processes minus 1
 kmax * number of nuisance parameters
 
 -------------------------------------------------------------------------------------------------
-shapes *         sig_fail  ../../../combined_model.root combinedws:monox_mass1_signal_fail_$PROCESS combinedws:monox_mass1_signal_fail_$PROCESS_$SYSTEMATIC
-shapes data_obs  sig_fail  ../../../combined_model.root combinedws:monox_mass1_signal_fail_data
-shapes signal    sig_fail  ../../../combined_model.root combinedws:monox_mass1_signal_fail_XX-SIGNAL-XX_signal combinedws:monox_mass1_signal_fail_XX-SIGNAL-XX_signal_$SYSTEMATIC
-shapes zvv       sig_fail  ../../../combined_model.root combinedws:monox_mass1_signal_fail_zjets_model
-shapes wjets     sig_fail  ../../../combined_model.root combinedws:monox_mass1_signal_fail_wjets_model
-shapes ttbar     sig_fail  ../../../combined_model.root combinedws:monox_mass1_signal_fail_ttbar_model
+shapes *         sig_fail  ../../../combined_model.root combinedws:monox_mass1_fail_signal_$PROCESS combinedws:monox_mass1_fail_signal_$PROCESS_$SYSTEMATIC
+shapes data_obs  sig_fail  ../../../combined_model.root combinedws:monox_mass1_fail_signal_data
+shapes signal    sig_fail  ../../../combined_model.root combinedws:monox_mass1_fail_signal_XX-SIGNAL-XX_signal combinedws:monox_mass1_fail_signal_XX-SIGNAL-XX_signal_$SYSTEMATIC
+shapes zvv       sig_fail  ../../../combined_model.root combinedws:monox_mass1_fail_signal_zjets_model
+shapes wjets     sig_fail  ../../../combined_model.root combinedws:monox_mass1_fail_signal_wjets_model
+shapes ttbar     sig_fail  ../../../combined_model.root combinedws:monox_mass1_fail_signal_ttbar_model
 -------------------------------------------------------------------------------------------------
 bin 	     sig_fail
 observation  -1 
@@ -38,8 +38,8 @@ zvvfailsignal rateParam sig_fail zvv ((1.0-@0*@1)/(1.0-@1)) mass1_zlleffSF,mass1
 mass1_wjetseff param 0.0316 0.001264
 mass1_wlneffSF  extArg 1.0 [0.0,10.0]
 wlnfailsignal rateParam sig_fail wjets ((1.0-@0*@1)/(1.0-@1)) mass1_wlneffSF,mass1_wjetseff
-mass1_ttbareff param 0.1678 0.0001
-mass1_ttbareffSF  extArg 1.03 [0.96,1.1]
-ttbarfailsig rateParam sig_fail ttbar ((1.0-@0*@1)/(1.0-@1)) mass1_ttbareffSF,mass1_ttbareff
+ttbareff param 0.1678 0.0001
+ttbareffSF  extArg 1.03 [0.96,1.1]
+ttbarfailsig rateParam sig_fail ttbar ((1.0-@0*@1)/(1.0-@1)) ttbareffSF,ttbareff
 btag param 0.0 1
 mistag param 0.0 1

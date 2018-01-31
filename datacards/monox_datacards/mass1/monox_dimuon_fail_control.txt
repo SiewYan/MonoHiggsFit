@@ -5,9 +5,9 @@ jmax * number of processes minus 1
 kmax * number of nuisance parameters
 
 -------------------------------------------------------------------------------------------------
-shapes *         zmm_fail  ../../../combined_model.root combinedws:monox_mass1_dimuon_fail_$PROCESS combinedws:monox_mass1_dimuon_fail_$PROCESS_$SYSTEMATIC
-shapes data_obs  zmm_fail  ../../../combined_model.root combinedws:monox_mass1_dimuon_fail_data
-shapes zll       zmm_fail  ../../../combined_model.root combinedws:monox_mass1_dimuonfailModel_zjets_model
+shapes *         zmm_fail  ../../../combined_model.root combinedws:monox_mass1_fail_dimuon_$PROCESS combinedws:monox_mass1_fail_dimuon_$PROCESS_$SYSTEMATIC
+shapes data_obs  zmm_fail  ../../../combined_model.root combinedws:monox_mass1_fail_dimuon_data
+shapes zll       zmm_fail  ../../../combined_model.root combinedws:monox_mass1_fail_dimuonModel_zjets_model
 -------------------------------------------------------------------------------------------------
 bin 	     zmm_fail
 observation  -1 

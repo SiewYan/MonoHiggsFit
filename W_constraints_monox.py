@@ -9,7 +9,6 @@ def cmodel(cid,nam,_f,_fOut, out_ws, diag):
   _fin    = _f.Get("category_%s"%cid)
   _wspace = _fin.Get("wspace_%s"%cid)
 
-
   # ############################ USER DEFINED ###########################################################
   # First define the nominal transfer factors (histograms of signal/control, usually MC 
   # note there are many tools available inside include/diagonalize.h for you to make 
