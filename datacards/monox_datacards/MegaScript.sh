@@ -4,11 +4,17 @@ echo "Launching Megascript"
 sleep 3
 sh run_combineMassBin.sh
 
-for mass in mass1
+for mass in MASS
 do
     scp scan_hszp.sh ${mass}/scan_hszp.sh
     eval cd $mass
-    sh scan_hszp.sh $mass
+
+    if [$mass == "MASS"];then
+	sh scan_hszp.sh all
+    else:
+	sh scan_hszp.sh $mass
+    fi
     rm scan_hszp.sh
+
 done
 echo "DONE"
