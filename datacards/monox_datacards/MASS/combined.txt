@@ -5,13 +5,13 @@ kmax 273 number of nuisance parameters
 ----------------------------------------------------------------------------------------------------------------------------------
 shapes *                   ch1_mass0_sig       ./../../../combined_model.root combinedws:monox_mass0_signal_$PROCESS combinedws:monox_mass0_signal_$PROCESS_$SYSTEMATIC
 shapes data_obs            ch1_mass0_sig       ./../../../combined_model.root combinedws:monox_mass0_signal_data
-shapes signal              ch1_mass0_sig       ./../../../combined_model.root combinedws:monox_mass0_signal_hsZp_1000_50_200_signal combinedws:monox_mass0_signal_hsZp_1000_50_200_signal_$SYSTEMATIC
+shapes signal              ch1_mass0_sig       ./../../../combined_model.root combinedws:monox_mass0_signal_hsZp_1000_50_300_signal combinedws:monox_mass0_signal_hsZp_1000_50_300_signal_$SYSTEMATIC
 shapes ttbar               ch1_mass0_sig       ./../../../combined_model.root combinedws:monox_mass0_signal_ttbar_model
 shapes wjets               ch1_mass0_sig       ./../../../combined_model.root combinedws:monox_mass0_signal_wjets_model
 shapes zvv                 ch1_mass0_sig       ./../../../combined_model.root combinedws:monox_mass0_signal_zjets_model
 shapes *                   ch1_mass0_sig_fail  ./../../../combined_model.root combinedws:monox_mass0_fail_signal_$PROCESS combinedws:monox_mass0_fail_signal_$PROCESS_$SYSTEMATIC
 shapes data_obs            ch1_mass0_sig_fail  ./../../../combined_model.root combinedws:monox_mass0_fail_signal_data
-shapes signal              ch1_mass0_sig_fail  ./../../../combined_model.root combinedws:monox_mass0_fail_signal_hsZp_1000_50_200_signal combinedws:monox_mass0_fail_signal_hsZp_1000_50_200_signal_$SYSTEMATIC
+shapes signal              ch1_mass0_sig_fail  ./../../../combined_model.root combinedws:monox_mass0_fail_signal_hsZp_1000_50_300_signal combinedws:monox_mass0_fail_signal_hsZp_1000_50_300_signal_$SYSTEMATIC
 shapes ttbar               ch1_mass0_sig_fail  ./../../../combined_model.root combinedws:monox_mass0_fail_signal_ttbar_model
 shapes wjets               ch1_mass0_sig_fail  ./../../../combined_model.root combinedws:monox_mass0_fail_signal_wjets_model
 shapes zvv                 ch1_mass0_sig_fail  ./../../../combined_model.root combinedws:monox_mass0_fail_signal_zjets_model
@@ -57,13 +57,13 @@ shapes data_obs            ch1_mass0_zmm_fail  ./../../../combined_model.root co
 shapes zll                 ch1_mass0_zmm_fail  ./../../../combined_model.root combinedws:monox_mass0_fail_dimuonModel_zjets_model
 shapes *                   ch2_mass1_sig       ./../../../combined_model.root combinedws:monox_mass1_signal_$PROCESS combinedws:monox_mass1_signal_$PROCESS_$SYSTEMATIC
 shapes data_obs            ch2_mass1_sig       ./../../../combined_model.root combinedws:monox_mass1_signal_data
-shapes signal              ch2_mass1_sig       ./../../../combined_model.root combinedws:monox_mass1_signal_hsZp_1000_50_200_signal combinedws:monox_mass1_signal_hsZp_1000_50_200_signal_$SYSTEMATIC
+shapes signal              ch2_mass1_sig       ./../../../combined_model.root combinedws:monox_mass1_signal_hsZp_1000_50_300_signal combinedws:monox_mass1_signal_hsZp_1000_50_300_signal_$SYSTEMATIC
 shapes ttbar               ch2_mass1_sig       ./../../../combined_model.root combinedws:monox_mass1_signal_ttbar_model
 shapes wjets               ch2_mass1_sig       ./../../../combined_model.root combinedws:monox_mass1_signal_wjets_model
 shapes zvv                 ch2_mass1_sig       ./../../../combined_model.root combinedws:monox_mass1_signal_zjets_model
 shapes *                   ch2_mass1_sig_fail  ./../../../combined_model.root combinedws:monox_mass1_fail_signal_$PROCESS combinedws:monox_mass1_fail_signal_$PROCESS_$SYSTEMATIC
 shapes data_obs            ch2_mass1_sig_fail  ./../../../combined_model.root combinedws:monox_mass1_fail_signal_data
-shapes signal              ch2_mass1_sig_fail  ./../../../combined_model.root combinedws:monox_mass1_fail_signal_hsZp_1000_50_200_signal combinedws:monox_mass1_fail_signal_hsZp_1000_50_200_signal_$SYSTEMATIC
+shapes signal              ch2_mass1_sig_fail  ./../../../combined_model.root combinedws:monox_mass1_fail_signal_hsZp_1000_50_300_signal combinedws:monox_mass1_fail_signal_hsZp_1000_50_300_signal_$SYSTEMATIC
 shapes ttbar               ch2_mass1_sig_fail  ./../../../combined_model.root combinedws:monox_mass1_fail_signal_ttbar_model
 shapes wjets               ch2_mass1_sig_fail  ./../../../combined_model.root combinedws:monox_mass1_fail_signal_wjets_model
 shapes zvv                 ch2_mass1_sig_fail  ./../../../combined_model.root combinedws:monox_mass1_fail_signal_zjets_model
@@ -109,13 +109,13 @@ shapes data_obs            ch2_mass1_zmm_fail  ./../../../combined_model.root co
 shapes zll                 ch2_mass1_zmm_fail  ./../../../combined_model.root combinedws:monox_mass1_fail_dimuonModel_zjets_model
 shapes *                   ch3_mass2_sig       ./../../../combined_model.root combinedws:monox_mass2_signal_$PROCESS combinedws:monox_mass2_signal_$PROCESS_$SYSTEMATIC
 shapes data_obs            ch3_mass2_sig       ./../../../combined_model.root combinedws:monox_mass2_signal_data
-shapes signal              ch3_mass2_sig       ./../../../combined_model.root combinedws:monox_mass2_signal_hsZp_1000_50_200_signal combinedws:monox_mass2_signal_hsZp_1000_50_200_signal_$SYSTEMATIC
+shapes signal              ch3_mass2_sig       ./../../../combined_model.root combinedws:monox_mass2_signal_hsZp_1000_50_300_signal combinedws:monox_mass2_signal_hsZp_1000_50_300_signal_$SYSTEMATIC
 shapes ttbar               ch3_mass2_sig       ./../../../combined_model.root combinedws:monox_mass2_signal_ttbar_model
 shapes wjets               ch3_mass2_sig       ./../../../combined_model.root combinedws:monox_mass2_signal_wjets_model
 shapes zvv                 ch3_mass2_sig       ./../../../combined_model.root combinedws:monox_mass2_signal_zjets_model
 shapes *                   ch3_mass2_sig_fail  ./../../../combined_model.root combinedws:monox_mass2_fail_signal_$PROCESS combinedws:monox_mass2_fail_signal_$PROCESS_$SYSTEMATIC
 shapes data_obs            ch3_mass2_sig_fail  ./../../../combined_model.root combinedws:monox_mass2_fail_signal_data
-shapes signal              ch3_mass2_sig_fail  ./../../../combined_model.root combinedws:monox_mass2_fail_signal_hsZp_1000_50_200_signal combinedws:monox_mass2_fail_signal_hsZp_1000_50_200_signal_$SYSTEMATIC
+shapes signal              ch3_mass2_sig_fail  ./../../../combined_model.root combinedws:monox_mass2_fail_signal_hsZp_1000_50_300_signal combinedws:monox_mass2_fail_signal_hsZp_1000_50_300_signal_$SYSTEMATIC
 shapes ttbar               ch3_mass2_sig_fail  ./../../../combined_model.root combinedws:monox_mass2_fail_signal_ttbar_model
 shapes wjets               ch3_mass2_sig_fail  ./../../../combined_model.root combinedws:monox_mass2_fail_signal_wjets_model
 shapes zvv                 ch3_mass2_sig_fail  ./../../../combined_model.root combinedws:monox_mass2_fail_signal_zjets_model
@@ -161,13 +161,13 @@ shapes data_obs            ch3_mass2_zmm_fail  ./../../../combined_model.root co
 shapes zll                 ch3_mass2_zmm_fail  ./../../../combined_model.root combinedws:monox_mass2_fail_dimuonModel_zjets_model
 shapes *                   ch4_mass3_sig       ./../../../combined_model.root combinedws:monox_mass3_signal_$PROCESS combinedws:monox_mass3_signal_$PROCESS_$SYSTEMATIC
 shapes data_obs            ch4_mass3_sig       ./../../../combined_model.root combinedws:monox_mass3_signal_data
-shapes signal              ch4_mass3_sig       ./../../../combined_model.root combinedws:monox_mass3_signal_hsZp_1000_50_200_signal combinedws:monox_mass3_signal_hsZp_1000_50_200_signal_$SYSTEMATIC
+shapes signal              ch4_mass3_sig       ./../../../combined_model.root combinedws:monox_mass3_signal_hsZp_1000_50_300_signal combinedws:monox_mass3_signal_hsZp_1000_50_300_signal_$SYSTEMATIC
 shapes ttbar               ch4_mass3_sig       ./../../../combined_model.root combinedws:monox_mass3_signal_ttbar_model
 shapes wjets               ch4_mass3_sig       ./../../../combined_model.root combinedws:monox_mass3_signal_wjets_model
 shapes zvv                 ch4_mass3_sig       ./../../../combined_model.root combinedws:monox_mass3_signal_zjets_model
 shapes *                   ch4_mass3_sig_fail  ./../../../combined_model.root combinedws:monox_mass3_fail_signal_$PROCESS combinedws:monox_mass3_fail_signal_$PROCESS_$SYSTEMATIC
 shapes data_obs            ch4_mass3_sig_fail  ./../../../combined_model.root combinedws:monox_mass3_fail_signal_data
-shapes signal              ch4_mass3_sig_fail  ./../../../combined_model.root combinedws:monox_mass3_fail_signal_hsZp_1000_50_200_signal combinedws:monox_mass3_fail_signal_hsZp_1000_50_200_signal_$SYSTEMATIC
+shapes signal              ch4_mass3_sig_fail  ./../../../combined_model.root combinedws:monox_mass3_fail_signal_hsZp_1000_50_300_signal combinedws:monox_mass3_fail_signal_hsZp_1000_50_300_signal_$SYSTEMATIC
 shapes ttbar               ch4_mass3_sig_fail  ./../../../combined_model.root combinedws:monox_mass3_fail_signal_ttbar_model
 shapes wjets               ch4_mass3_sig_fail  ./../../../combined_model.root combinedws:monox_mass3_fail_signal_wjets_model
 shapes zvv                 ch4_mass3_sig_fail  ./../../../combined_model.root combinedws:monox_mass3_fail_signal_zjets_model
