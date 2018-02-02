@@ -2,24 +2,24 @@
 
 massbin=$1
 
-samples_zpdm=(hsZp_1000_50_200 hsZp_1000_50_300)
-#samples_2hdm=(BarZp-500-1000)
+#samples_hsdm=(hsDM-1000-50-100 hsDM-1000-50-200 hsDM-1000-50-250 hsDM-1000-50-300)
+samples_hsdm=(hsDM-1000-50-100 hsDM-1000-50-200 hsDM-1000-50-250)
+#samples_Zpdm=(ZpDM-1000-150-10 ZpDM-1000-50-10 ZpDM-100-150-10 ZpDM-100-50-10 ZpDM-1500-150-10 ZpDM-1500-50-10 ZpDM-2000-150-10 ZpDM-2000-50-10 ZpDM-2500-150-10 ZpDM-3000-150-10 ZpDM-3000-50-10 ZpDM-300-150-10)
+samples_Zpdm=(ZpDM-1000-150-10 ZpDM-2000-50-10 ZpDM-3000-150-10)
+FS="Zpdm"
 
-echo "med hs dm twosigdown onesigdown exp onesigup twosigup" > limits_hsZp_${massbin}.txt
+echo "med hs dm twosigdown onesigdown exp onesigup twosigup" > limits_${FS}_${massbin}.txt
 
-for k in "${samples_zpdm[@]}"; do
-    mediatordm=${k#'hsZp-'} #500-1000
+for k in "${samples_Zpdm[@]}"; do
+    mediatordm=${k#'ZpDM-'} #500-1000
     branchingratio='1.0'
-    #mediator=${mediatordm%-*} #500
-    #dm=`echo ${mediatordm#${mediator}-}` #1500
-    mediator=`(echo $mediatordm | awk -F '_' '{print$2}')`
-    medhs=`(echo $mediatordm | awk -F '_' '{print$3}')`
-    dm=`(echo $mediatordm | awk -F '_' '{print$4}')`
+    mediator=`(echo $mediatordm | awk -F '-' '{print$1}')`
+    medhs=`(echo $mediatordm | awk -F '-' '{print$2}')`
+    dm=`(echo $mediatordm | awk -F '-' '{print$3}')`
 
     #echo "mediator = $mediator"
     #echo "medhs = $medhs"
     #echo "dm = $dm"
-
 
     cp combine_${massbin}.txt combined.txt
     sed -i 's/XX-SIGNAL-XX/'${k}'/g' combined.txt
@@ -27,6 +27,7 @@ for k in "${samples_zpdm[@]}"; do
     #Computing limits
     combine -M Asymptotic -t -1 combined.txt --rAbsAcc 0 --rMax 30  | tee limits_tmp.txt
     #Parsing results into textfile
+    #obs=`cat limits_tmp.txt | grep 'Observed Limit: r <' | awk '{print $5}'`
     twosigdown=`cat limits_tmp.txt | grep 'Expected  2.5%: r <' | awk '{print $5}'`
     onesigdown=`cat limits_tmp.txt | grep 'Expected 16.0%: r <' | awk '{print $5}'`
     exp=`cat limits_tmp.txt | grep 'Expected 50.0%: r <' | awk '{print $5}'`
@@ -36,14 +37,15 @@ for k in "${samples_zpdm[@]}"; do
     rm limits_tmp.txt
 
     #Applying branching ratio
+    #obs=`echo "scale=7 ; $obs / $branchingratio" | bc`
     onesigdown=`echo "scale=7 ; $onesigdown / $branchingratio" | bc`
     twosigdown=`echo "scale=7 ; $twosigdown / $branchingratio" | bc`
     exp=`echo "scale=7 ; $exp / $branchingratio" | bc`
     onesigup=`echo "scale=7 ; $onesigup / $branchingratio" | bc`
     twosigup=`echo "scale=7 ; $twosigup / $branchingratio" | bc`
 
-    echo "${mediator} ${medhs} ${dm} ${twosigdown} ${onesigdown} ${exp} ${onesigup} ${twosigup}" >> limits_hsZp_${massbin}.txt
+    echo "${mediator} ${medhs} ${dm} ${twosigdown} ${onesigdown} ${exp} ${onesigup} ${twosigup}" >> limits_${FS}_${massbin}.txt
 
 done
-mv limits_hsZp_${massbin}.txt ../limits_hsZp_${massbin}.txt
+mv limits_${FS}_${massbin}.txt ../limits_${FS}_${massbin}.txt
 rm combined.txt

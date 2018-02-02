@@ -4,7 +4,7 @@
 out_file_name = 'mono-x3.root'
 
 # can define any thing useful here which may be common to several categories, eg binning in MET 
-bins = [200,270,350,475,1000]
+bins = [250,270,350,475,1000]
 
 # will expect samples with sample_sys_Up/Down but will skip if not found 
 systematics=["btag","mistag"]
@@ -45,10 +45,24 @@ monox_doublebp_mass3_category = {
 		  ,"ST_signal"                 :['signal','stop',1,0]
 		  ,"QCD_signal"		       :['signal','qcd',1,0]
 		  ,"Data_signal"	       :['signal','data',0,0]
-                  # signals                                                                                                                                                                                     
-                  ,"hsZp_1000_50_200_signal"    :['signal','hsZp_1000_50_200_signal',1,1]
-                  ,"hsZp_1000_50_300_signal"    :['signal','hsZp_1000_50_300_signal',1,1]
+                  # signals                                                                                     
+                  ,"hsDM_1000_50_100_signal"    :['signal','hsDM-1000-50-100_signal',1,1]
+                  ,"hsDM_1000_50_200_signal"    :['signal','hsDM-1000-50-200_signal',1,1]
+                  ,"hsDM_1000_50_250_signal"    :['signal','hsDM-1000-50-250_signal',1,1]
+                  ,"hsDM_1000_50_300_signal"    :['signal','hsDM-1000-50-300_signal',1,1]
 
+                  ,"ZpDM_1000_150_10_signal"    :['signal','ZpDM-1000-150-10_signal',1,1]
+                  ,"ZpDM_1000_50_10_signal"    :['signal','ZpDM-1000-50-10_signal',1,1]
+                  ,"ZpDM_100_150_10_signal"    :['signal','ZpDM-100-150-10_signal',1,1]
+                  ,"ZpDM_100_50_10_signal"    :['signal','ZpDM-100-50-10_signal',1,1]
+                  ,"ZpDM_1500_150_10_signal"    :['signal','ZpDM-1500-150-10_signal',1,1]
+                  ,"ZpDM_1500_50_10_signal"    :['signal','ZpDM-1500-50-10_signal',1,1]
+                  ,"ZpDM_2000_150_10_signal"    :['signal','ZpDM-2000-150-10_signal',1,1]
+                  ,"ZpDM_2000_50_10_signal"    :['signal','ZpDM-2000-50-10_signal',1,1]
+                  ,"ZpDM_2500_150_10_signal"    :['signal','ZpDM-2500-150-10_signal',1,1]
+                  ,"ZpDM_3000_150_10_signal"    :['signal','ZpDM-3000-150-10_signal',1,1]
+                  ,"ZpDM_3000_50_10_signal"    :['signal','ZpDM-3000-50-10_signal',1,1]
+                  ,"ZpDM_300_150_10_signal"    :['signal','ZpDM-300-150-10_signal',1,1]
 
 		  # Di muon-Control
 #                  ,"VH_zmm"                    :['dimuon','vh',1,0] 
@@ -135,8 +149,23 @@ monox_doublebf_mass3_category = {
 		  ,"QCD_signal_fail"		       :['signal','qcd',1,0]
 		  ,"Data_signal_fail"	       :['signal','data',0,0]
                   #signal
-                  ,"hsZp_1000_50_200_signal_fail"    :['signal','hsZp_1000_50_200_signal',1,1]
-                  ,"hsZp_1000_50_300_signal_fail"    :['signal','hsZp_1000_50_300_signal',1,1]
+                  ,"hsDM_1000_50_100_signal_fail"    :['signal','hsDM-1000-50-100_signal',1,1]
+                  ,"hsDM_1000_50_200_signal_fail"    :['signal','hsDM-1000-50-200_signal',1,1]
+                  ,"hsDM_1000_50_250_signal_fail"    :['signal','hsDM-1000-50-250_signal',1,1]
+                  ,"hsDM_1000_50_300_signal_fail"    :['signal','hsDM-1000-50-300_signal',1,1]
+
+                  ,"ZpDM_1000_150_10_signal_fail"    :['signal','ZpDM-1000-150-10_signal',1,1]
+                  ,"ZpDM_1000_50_10_signal_fail"    :['signal','ZpDM-1000-50-10_signal',1,1]
+                  ,"ZpDM_100_150_10_signal_fail"    :['signal','ZpDM-100-150-10_signal',1,1]
+                  ,"ZpDM_100_50_10_signal_fail"    :['signal','ZpDM-100-50-10_signal',1,1]
+                  ,"ZpDM_1500_150_10_signal_fail"    :['signal','ZpDM-1500-150-10_signal',1,1]
+                  ,"ZpDM_1500_50_10_signal_fail"    :['signal','ZpDM-1500-50-10_signal',1,1]
+                  ,"ZpDM_2000_150_10_signal_fail"    :['signal','ZpDM-2000-150-10_signal',1,1]
+                  ,"ZpDM_2000_50_10_signal_fail"    :['signal','ZpDM-2000-50-10_signal',1,1]
+                  ,"ZpDM_2500_150_10_signal_fail"    :['signal','ZpDM-2500-150-10_signal',1,1]
+                  ,"ZpDM_3000_150_10_signal_fail"    :['signal','ZpDM-3000-150-10_signal',1,1]
+                  ,"ZpDM_3000_50_10_signal_fail"    :['signal','ZpDM-3000-50-10_signal',1,1]
+                  ,"ZpDM_300_150_10_signal_fail"    :['signal','ZpDM-300-150-10_signal',1,1]
 
 		  # Di muon-Control_fail
                   ,"Zll_zmm_fail"	       :['dimuon','zll',1,1]
