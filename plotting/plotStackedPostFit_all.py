@@ -6,7 +6,7 @@ from tdrStyle import *
 import plotConfig
 #from __future__ import print_function
 setTDRStyle()
-
+gROOT.SetBatch(True)
 
 new_dic = defaultdict(dict)
 
@@ -18,30 +18,38 @@ def getInt(h):
   return total
 
 #ttbar_color = ROOT.TColor.GetColor(0.329411764705882,0.534640522875817,0.728104575163399)
-ttbar_color = ROOT.TColor.GetColor(0.886, 0.956, 0.803)
-singletop_color = ROOT.TColor.GetColor(0.560, 0.662, 0.596)
-diboson_color = ROOT.TColor.GetColor(0.709, 0.686, 0.721)
-#zll_color = ROOT.TColor.GetColor(1, 0.709, 0.862)
-zll_color = ROOT.TColor.GetColor(0.537, 0.494, 0.580)
-wjets_color = ROOT.TColor.GetColor(0.717, 0.815, 0.749)
-qcd_color = ROOT.TColor.GetColor(0.270, 0.2, 0.301)
+ttbar_color = kOrange-4
+singletop_color = kRed-9
+diboson_color = kYellow-9
+zll_color = kCyan-9
+wjets_color = kGreen-10
+qcd_color = kMagenta-10
+#ttbar_color = ROOT.TColor.GetColor(0.886, 0.956, 0.803)
+#singletop_color = ROOT.TColor.GetColor(0.560, 0.662, 0.596)
+#diboson_color = ROOT.TColor.GetColor(0.709, 0.686, 0.721)
+##zll_color = ROOT.TColor.GetColor(1, 0.709, 0.862)
+#zll_color = ROOT.TColor.GetColor(0.537, 0.494, 0.580)
+#wjets_color = ROOT.TColor.GetColor(0.717, 0.815, 0.749)
+#qcd_color = ROOT.TColor.GetColor(0.270, 0.2, 0.301)
 syst_color = ROOT.TColor.GetColor(0.960, 0.925, 0.6)
+
 def plotPreFitPostFit(region):
   global blind
-  channel = {"singlemuonw":"wmn", 
-              "singlemuontop":"tmn",
-              "singlemuontop_fail":"tmn_fail",
-              "dielectron":"zee",
-              "dielectron_fail":"zee_fail",
-              "dimuon":"zmm",
-              "dimuon_fail":"zmm_fail",
-              "singlemuonw_fail":"wmn_fail", 
-              "singleelectronw_fail":"wen_fail", 
-              "photon":"pho", 
-              "signal":"sig", 
-              "singleelectrontop":"ten", 
-              "singleelectrontop_fail":"ten_fail", 
-              "singleelectronw":"wen"}
+  #looking at mass0
+  channel = {"singlemuonw":"mass0_wmn", 
+              "singlemuontop":"mass0_tmn",
+              "singlemuontop_fail":"mass0_tmn_fail",
+              "dielectron":"mass0_zee",
+              "dielectron_fail":"mass0_zee_fail",
+              "dimuon":"mass0_zmm",
+              "dimuon_fail":"mass0_zmm_fail",
+              "singlemuonw_fail":"mass0_wmn_fail", 
+              "singleelectronw_fail":"mass0_wen_fail", 
+              "signal":"mass0_sig", 
+              "signal_fail":"mass0_sig_fail",
+              "singleelectrontop":"mass0_ten", 
+              "singleelectrontop_fail":"mass0_ten_fail", 
+              "singleelectronw":"mass0_wen"}
   extralabels = {"singlemuonw":"W CR (#mu)", 
               "singlemuontop":"t#bar{t} CR (#mu)",
               "singlemuontop_fail":"t#bar{t} CR (#mu) fail",
@@ -51,24 +59,35 @@ def plotPreFitPostFit(region):
               "dimuon_fail":"Dimuon CR fail",
               "singlemuonw_fail":"W CR (#mu) fail", 
               "singleelectronw_fail":"W CR (e) fail", 
-              "photon":"Photon CR", 
+              #"photon":"Photon CR", 
               "signal":"SR", 
+              "signal_fail":"SR fail",
               "singleelectrontop":"t#bar{t} CR (e)", 
               "singleelectrontop_fail":"t#bar{t} CR (e) fail", 
               "singleelectronw":"W CR (e)"}
 
   extralabel = extralabels[region]
-  mainbkg = {"singlemuonw":"wjets", "singlemuonw_fail":"wjets", "singleelectronw_fail":"wjets", "dimuon":"zll", "dimuon_fail":"zll", "photon":"gjets", "signal":None, "singleelectronw":"wjets", "dielectron":"zll", "dielectron_fail":"zll", "singlemuontop":"ttbar","singleelectrontop":"ttbar","singlemuontop_fail":"ttbar","singleelectrontop_fail":"ttbar"}
+  mainbkg = {"singlemuonw":"wjets", "singlemuonw_fail":"wjets", "singleelectronw_fail":"wjets", "dimuon":"zll", "dimuon_fail":"zll", "signal":None, "singleelectronw":"wjets", "dielectron":"zll", "dielectron_fail":"zll", "singlemuontop":"ttbar","singleelectrontop":"ttbar","singlemuontop_fail":"ttbar","singleelectrontop_fail":"ttbar"}
 
-  basedir = getenv('CMSSW_BASE') + '/src/MonoXFit_MonoH/'
+  basedir = getenv('CMSSW_BASE') + '/src/MonoHiggsFit/'
 
-  f_mlfit = TFile(basedir+'/datacards/mlfit_data.root','READ')
+  f_mlfit = TFile(basedir+'datacards/monox_datacards/mass0/fitDiagnostics.root','READ')  
 
-  f_data = TFile(basedir+"/mono-x.root","READ")
-  f_data.cd("category_monohiggs")
+  f_data = TFile(basedir+"/mono-x0.root","READ")
+  #print "region.split('_')[1] = ", region[-4:]
+  
+  if region[-4:] == "fail":
+    POF="Fail_MSDcorr_"
+    f_data.cd("category_monox_mass0_fail")
+    region = region.split('_')[0] #for the moment
+  else:
+    POF="PASS_MSDcorr_"
+    f_data.cd("category_monox_mass0") #category_monox_mass0/category_monox_mass0_fail 
   h_data = None
   blind = False 
   h_data = gDirectory.Get(region+"_data")
+  print "defining h_data = ", region+"_data"
+  print "data valid?", h_data
 #  if region=='signal':
 #    h_res = gDirectory.Get('signal_Mres1100_Mchi100'); h_res.SetLineColor(kGreen+3)
 #    h_fcnc = gDirectory.Get('signal_monotop_fcnc_mMed900'); h_fcnc.SetLineColor(kViolet+9)
@@ -93,8 +112,8 @@ def plotPreFitPostFit(region):
   b_width = [50,50,50,100,500]
 
   processesNormal = [
-      'vh',
-      'qcd',
+#      'vh',
+#      'qcd',
       'dibosons',
       'stop',
       'wjets',
@@ -105,7 +124,7 @@ def plotPreFitPostFit(region):
   ]
 
   processesZ = [
-      'vh',
+#      'vh',
       'dibosons',
       'stop',
       'ttbar',
@@ -113,7 +132,7 @@ def plotPreFitPostFit(region):
   ]
 
   processesT = [
-      'vh',
+#      'vh',
       'tth',
       'qcd',
       'zll',
@@ -133,7 +152,7 @@ def plotPreFitPostFit(region):
   ]
 
   processesW = [
-      'vh',
+#      'vh',
       'qcd',
       'zll',
       'dibosons',
@@ -153,7 +172,7 @@ def plotPreFitPostFit(region):
 
   if region=='singlemuonw' or region=='singleelectronw':
     processes = processesW
-  if region=='singlemuonw_fail' or region=='singleelectronw_fail':
+  elif region=='singlemuonw_fail' or region=='singleelectronw_fail':
     processes = processesWfail
   elif region=='dimuon' or region=='dielectron' or region == 'dielectron_fail' or region == 'dimuon_fail':
     processes = processesZ
@@ -166,11 +185,11 @@ def plotPreFitPostFit(region):
   
   processNames = {'gjets':'#gamma+jets',
                   'vh':'VH',
-                  'smhiggs':'SM H',
+                  'smhiggs':'SM h',
                   'ttH':'t#bar{t}H',
                   'qcd':'QCD',
                   'ttbar':'t#bar{t}',
-                  'stop':'Single top',
+                  'stop':'t',
                   'dibosons':'Diboson',
                   'zvv':'Z+jets',
                   'zll':'Z+jets',
@@ -179,21 +198,21 @@ def plotPreFitPostFit(region):
   
   order = [
            'VH',
-           'SM H'
            'Z#rightarrow#nu#nu',
            'Z#rightarrowll',
            'W#rightarrowl#nu',
            't#bar{t}',
-           'Single top',
+           't',
            'VV',
            'QCD',
+           'SM h'
            '#gamma+jets',
            'Data',
       ]
   zcolor = kCyan-4
   colors = {
       'qcd':qcd_color,
-      'vh':632,
+      'vh':627,
       'tth':634,
       'dibosons':diboson_color,    
       'ttbar':ttbar_color,
@@ -203,7 +222,7 @@ def plotPreFitPostFit(region):
       'zll':zll_color,
       'wjets':wjets_color,
       'stop':singletop_color,
-      'smhiggs':632
+      'smhiggs': 627
   }
 
   binLowE = []
@@ -211,6 +230,8 @@ def plotPreFitPostFit(region):
   # Pre-Fit
   h_prefit = {}
   h_prefit['total'] = f_mlfit.Get("shapes_prefit/"+channel[region]+"/total")
+  print h_prefit['total']
+  print "channel[region] = ", channel[region]
   for i in range(1,h_prefit['total'].GetNbinsX()+2):
     binLowE.append(h_prefit['total'].GetBinLowEdge(i))
 
@@ -219,7 +240,7 @@ def plotPreFitPostFit(region):
   h_stack_prefit = THStack("h_stack_prefit","h_stack_prefit")    
 
   f_prefit = open('prefit_%s.txt' % region, 'w')
-  print >> f_prefit, 'proc xmin xmax y yerr'
+  print >> f_prefit, 'proc xmin xmax y yerr rel'
 
   for process in processes:
     h_prefit[process] = f_mlfit.Get("shapes_prefit/"+channel[region]+"/"+process)
@@ -234,9 +255,11 @@ def plotPreFitPostFit(region):
     if (not process==mainbkg[region]): h_other_prefit.Add(h_prefit[process])
     h_stack_prefit.Add(h_prefit[process])
     print h_prefit[process].Integral()
-    for i in range(1, h_prefit[process].GetNbinsX()+1):
+
+#    for i in range(1, h_prefit[process].GetNbinsX()+1):
      # print >>process.txt, process + ' ' + str(h_prefit[process].GetBinContent(i))
-      print >> f_prefit, process + ' ' + str(h_prefit[process].GetXaxis().GetBinLowEdge(i)) + ' ' + str(h_prefit[process].GetXaxis().GetBinUpEdge(i)) + ' ' + str(h_prefit[process].GetBinContent(i)*h_prefit[process].GetBinWidth(i)) + ' ' + str(h_prefit[process].GetBinError(i)*h_prefit[process].GetBinWidth(i))
+
+#      print >> f_prefit, process + ' ' + str(h_prefit[process].GetXaxis().GetBinLowEdge(i)) + ' ' + str(h_prefit[process].GetXaxis().GetBinUpEdge(i)) + ' ' + str(h_prefit[process].GetBinContent(i)*h_prefit[process].GetBinWidth(i)) + ' ' + str(h_prefit[process].GetBinError(i)*h_prefit[process].GetBinWidth(i)) + ' ' + str(h_prefit[process].GetBinError(i)*h_prefit[process].GetBinWidth(i)/(h_prefit[process].GetBinContent(i)*h_prefit[process].GetBinWidth(i)))
     
     
 
@@ -249,6 +272,8 @@ def plotPreFitPostFit(region):
   
 
   h_postfit['totalv2'] = f_mlfit.Get("shapes_fit_b/"+channel[region]+"/total_background")
+  print "channel[region] = ", channel[region]
+  print " h_postfit['totalv2']= ",  h_postfit['totalv2']
   h_postfit['total_prefit'] = f_mlfit.Get("shapes_prefit/"+channel[region]+"/total_background")
 
   for i in range(1, h_postfit['totalv2'].GetNbinsX()+1):
@@ -256,18 +281,18 @@ def plotPreFitPostFit(region):
     content = h_postfit['totalv2'].GetBinContent(i)
 
   f_postfit = open('postfit_%s.txt' % region, 'w')
-  print >> f_postfit, 'proc xmin xmax y yerr'
+  print >> f_postfit, 'proc xmin xmax y yerr rel'
 
 
-  if 'top' in region and not 'fail' in region:
-    h_tmp_vh = f_mlfit.Get("shapes_fit_b/"+channel[region]+"/vh")
-    h_tmp_tth = f_mlfit.Get("shapes_fit_b/"+channel[region]+"/tth")
-    h_tmp_vh.Add(h_tmp_tth)
-    h_postfit['smhiggs'] = h_tmp_vh
-    h_postfit['smhiggs'].SetLineColor(kBlack)
-    h_postfit['smhiggs'].SetFillColor(632)
-    h_all_postfit.Add(h_postfit['smhiggs'])
-    h_stack_postfit.Add(h_postfit['smhiggs'])
+#  if 'top' in region and not 'fail' in region:
+#    h_tmp_vh = f_mlfit.Get("shapes_fit_b/"+channel[region]+"/vh")
+#    h_tmp_tth = f_mlfit.Get("shapes_fit_b/"+channel[region]+"/tth")
+#    h_tmp_vh.Add(h_tmp_tth)
+#    h_postfit['smhiggs'] = h_tmp_vh
+#    h_postfit['smhiggs'].SetLineColor(kBlack)
+#    h_postfit['smhiggs'].SetFillColor(627)
+#    h_all_postfit.Add(h_postfit['smhiggs'])
+#    h_stack_postfit.Add(h_postfit['smhiggs'])
 
   for process in processes:
     h_postfit[process] = f_mlfit.Get("shapes_fit_b/"+channel[region]+"/"+process)
@@ -285,9 +310,10 @@ def plotPreFitPostFit(region):
     h_all_postfit.Add(h_postfit[process])
     if (not process==mainbkg[region]): h_other_postfit.Add(h_postfit[process])
     h_stack_postfit.Add(h_postfit[process])
-    for i in range(1, h_prefit[process].GetNbinsX()+1):
+
+#    for i in range(1, h_prefit[process].GetNbinsX()+1):
      # print >>process.txt, process + ' ' + str(h_prefit[process].GetBinContent(i))
-      print >> f_postfit, process + ' ' + str(h_postfit[process].GetXaxis().GetBinLowEdge(i)) + ' ' + str(h_postfit[process].GetXaxis().GetBinUpEdge(i)) + ' ' + str(h_postfit[process].GetBinContent(i)) + ' ' + str(h_postfit[process].GetBinError(i))
+#      print >> f_postfit, process + ' ' + str(h_postfit[process].GetXaxis().GetBinLowEdge(i)) + ' ' + str(h_postfit[process].GetXaxis().GetBinUpEdge(i)) + ' ' + str(h_postfit[process].GetBinContent(i)*h_postfit[process].GetBinWidth(i)) + ' ' + str(h_postfit[process].GetBinError(i)*h_postfit[process].GetBinWidth(i)) + ' ' + str(h_postfit[process].GetBinError(i)*h_postfit[process].GetBinWidth(i)/(h_postfit[process].GetBinContent(i)*h_postfit[process].GetBinWidth(i)))
 
     
   f_postfit.close()
@@ -326,6 +352,8 @@ def plotPreFitPostFit(region):
   dummy.GetXaxis().SetTitleSize(0)
   dummy.GetXaxis().SetLabelSize(0)
   dummy.SetMaximum(50*dummy.GetMaximum())
+  if region == "signal":
+    dummy.SetMaximum(1.4*dummy.GetMaximum())
   dummy.SetMinimum(0.0005)
   if region == "singlemuonw" or region == "singleelectronw":
     dummy.SetMinimum(0.0015)
@@ -346,6 +374,7 @@ def plotPreFitPostFit(region):
 
   h_all_prefit.SetLineColor(2)
   h_all_prefit.SetLineWidth(3)
+  h_all_prefit.SetLineStyle(7)
 #  h_all_prefit.Scale(1,"width")
   h_all_prefit.Draw("histsame")
 
@@ -365,14 +394,14 @@ def plotPreFitPostFit(region):
   h_other_prefit.Draw("histsame")
   '''
 
+  h_data.SetLineWidth(1)
   if not blind:
     h_data.SetLineColor(1)
-    h_data.SetLineWidth(0)
     h_data.SetMarkerStyle(20)
     h_data.SetMarkerSize(1.2)
     h_data.Scale(1,"width")
-    if region != "signal":
-      h_data.Draw("epsame")
+    #if region != "signal":
+    h_data.Draw("epsame e0")
     for i in range(1, h_data.GetNbinsX()+1):
       print process
       print >> f_prefit,'data' + ' ' + str(h_data.GetXaxis().GetBinLowEdge(i)) + ' ' + str(h_data.GetXaxis().GetBinUpEdge(i)) + ' ' + str(h_data.GetBinContent(i)) + ' ' + str(h_data.GetBinError(i))
@@ -438,21 +467,21 @@ def plotPreFitPostFit(region):
 #    legend.AddEntry(h_res,'Resonant M_{#phi}=1.1 TeV','l')
 #    legend.AddEntry(h_fcnc,'FCNC M_{V}=0.9 TeV','l')
 
-  if 'top' in region and not 'fail' in region:
-    hist = h_postfit['smhiggs']
-    legend.AddEntry(hist,processNames['smhiggs'],"f")
-    yields[processNames['smhiggs']] = getInt(hist)
+#  if 'top' in region and not 'fail' in region:
+#    hist = h_postfit['smhiggs']
+#    legend.AddEntry(hist,processNames['smhiggs'],"f")
+#    yields[processNames['smhiggs']] = getInt(hist)
 
-  if 'singlemuonw' == region or 'singleelectronw' == region:
-    hist = h_postfit['vh']
-    legend.AddEntry(hist,"SM H","f")
-    yields[processNames['vh']] = getInt(hist)
+#  if 'singlemuonw' == region or 'singleelectronw' == region:
+#    hist = h_postfit['vh']
+#    legend.AddEntry(hist,"SM h","f")
+#    yields[processNames['vh']] = getInt(hist)
 
-  if 'dimuon' == region or 'dielectron' == region or 'signal' == region:
-    print region
-    hist = h_postfit['vh']
-    legend.AddEntry(hist,"SM H","f")
-    yields[processNames['vh']] = getInt(hist)
+#  if 'dimuon' == region or 'dielectron' == region or 'signal' == region:
+#    print region
+#    hist = h_postfit['vh']
+#    legend.AddEntry(hist,"SM h","f")
+#    yields[processNames['vh']] = getInt(hist)
 
   legend.SetShadowColor(0);
   legend.SetFillColor(0);
@@ -487,7 +516,8 @@ def plotPreFitPostFit(region):
   latex_CMS.SetNDC()
   latex_CMS.SetTextFont(42)
   latex_CMS.SetTextSize(0.06);
-  latex_CMS.DrawLatex(0.16,0.87715,"#bf{CMS}#scale[0.8]{#it{ Preliminary}}")
+  #latex_CMS.DrawLatex(0.16,0.87715,"#bf{CMS}#scale[0.8]{#it{ Preliminary}}")
+  latex_CMS.DrawLatex(0.16,0.87715,"#bf{CMS}")
   
   
   gPad.RedrawAxis()
@@ -576,8 +606,9 @@ def plotPreFitPostFit(region):
 
   g_ratio_pre = TGraphAsymmErrors(v_met,v_ratio_pre,v_dmet,v_dmet,v_ratio_pre_lo,v_ratio_pre_hi)
   g_ratio_pre.SetLineColor(2)
+  g_ratio_pre.SetLineStyle(7)
   g_ratio_pre.SetMarkerColor(2)
-  g_ratio_pre.SetMarkerStyle(20)
+  g_ratio_pre.SetMarkerStyle(24)
 
   g_ratio_post = TGraphAsymmErrors(v_met,v_ratio_post,v_dmet,v_dmet,v_ratio_post_lo,v_ratio_post_hi)
   g_ratio_post.SetLineColor(1)
@@ -591,12 +622,18 @@ def plotPreFitPostFit(region):
     ratiosys.SetBinContent(hbin+1,1.0)
     ratiosys_prefit.SetBinContent(hbin+1,1.0)
     if (h_postfit['totalv2'].GetBinContent(hbin+1)>0):
+      print "Rel. postfit unc."
       print h_postfit['totalv2'].GetBinError(hbin+1)/h_postfit['totalv2'].GetBinContent(hbin+1)
+      print "Abs. postfit unc."
+      print h_postfit['totalv2'].GetBinError(hbin+1)*h_postfit['totalv2'].GetBinWidth(hbin+1)
+      print "Abs. postfit"
+      print h_postfit['totalv2'].GetBinContent(hbin+1)*h_postfit['totalv2'].GetBinWidth(hbin+1)
       ratiosys.SetBinError(hbin+1,h_postfit['totalv2'].GetBinError(hbin+1)/h_postfit['totalv2'].GetBinContent(hbin+1))
 
     else:
       ratiosys.SetBinError(hbin+1,0)
     if (h_postfit['total_prefit'].GetBinContent(hbin+1)>0):
+      print "Rel. prefit unc."
       print h_postfit['total_prefit'].GetBinError(hbin+1)/h_postfit['total_prefit'].GetBinContent(hbin+1)
       ratiosys_prefit.SetBinError(hbin+1,h_postfit['total_prefit'].GetBinError(hbin+1)/h_postfit['total_prefit'].GetBinContent(hbin+1))
 
@@ -609,6 +646,8 @@ def plotPreFitPostFit(region):
     dummy2.SetBinContent(i,1.0)
   dummy2.GetYaxis().SetTitle("Data / Pred.")
   dummy2.GetXaxis().SetTitle("Recoil (GeV)")
+  if region == "signal":
+    dummy2.GetXaxis().SetTitle("#it{p}_{T}^{miss} (GeV)")
   dummy2.SetLineColor(0)
   dummy2.SetMarkerColor(0)
   dummy2.SetLineWidth(0)
@@ -630,12 +669,12 @@ def plotPreFitPostFit(region):
   ratiosys.SetMarkerSize(0)
   ratiosys.Draw("e2same")
 
-  ratiosys_prefit.SetFillColor(kGreen) #SetFillColor(ROOT.kYellow)
-  ratiosys_prefit.SetLineColor(kGreen) #SetLineColor(1)
-  ratiosys_prefit.SetFillStyle(3415) #SetLineColor(1)
-  ratiosys_prefit.SetLineWidth(1)
-  ratiosys_prefit.SetMarkerSize(1)
-  ratiosys_prefit.Draw("e2same")
+  ratiosys_prefit.SetFillColor(kGreen+2) #SetFillColor(ROOT.kYellow)
+  ratiosys_prefit.SetLineColor(kGreen+2) #SetLineColor(1)
+  ratiosys_prefit.SetFillStyle(3535) #SetLineColor(1)
+  ratiosys_prefit.SetLineWidth(2)
+  ratiosys_prefit.SetMarkerSize(2)
+  #ratiosys_prefit.Draw("e2same")
 
   
 
@@ -646,9 +685,9 @@ def plotPreFitPostFit(region):
   f1.Draw("same")
 
   if not blind:
-    if region != "signal":
-      g_ratio_pre.Draw("epsame")
-      g_ratio_post.Draw("epsame")
+    #if region != "signal":
+    g_ratio_pre.Draw("epsame 0")
+    g_ratio_post.Draw("epsame 0")
     
     f_ratios = open('ratios_%s.txt' % region, 'w')
 
@@ -669,14 +708,15 @@ def plotPreFitPostFit(region):
 
     f_ratios.close()
 
-    legend2 = TLegend(.60,.25,.75,.29)
-    legend3 = TLegend(.75,.25,.90,.29)
-    legend4 = TLegend(.30,.25,.45,.29)
-    legend5 = TLegend(.15,.25,.30,.29)
+
+    legend2 = TLegend(.671,.25,.821,.29)
+    legend3 = TLegend(.792,.25,.942,.29)
+    legend4 = TLegend(.26,.25,.41,.29)
+    legend5 = TLegend(.13,.25,.28,.29)
     legend2.AddEntry(g_ratio_pre,"pre-fit","elp")
     legend3.AddEntry(g_ratio_post,"post-fit","elp")
-    legend4.AddEntry(ratiosys,"post-fit","f")
-    legend5.AddEntry(ratiosys_prefit,"pre-fit","f")
+    legend5.AddEntry(ratiosys,"post-fit unc.","f")
+    #legend4.AddEntry(ratiosys_prefit,"pre-fit","f")
     for l in [legend2,legend3,legend4,legend5]:
       l.SetShadowColor(0);
       l.SetFillColor(0);
@@ -685,12 +725,12 @@ def plotPreFitPostFit(region):
       l.SetLineColor(0);
       l.Draw()
     
-  plotsDir = plotConfig.plotDir
+  #plotsDir = plotConfig.plotDir
+  plotsDir = ""
 
-
-  c.SaveAs(plotsDir+"MSDcorr_stackedPostfit_"+region+".pdf")
-  c.SaveAs(plotsDir+"MSDcorr_stackedPostfit_"+region+".png")
-  c.SaveAs(plotsDir+"MSDcorr_stackedPostfit_"+region+".C")
+  c.SaveAs(plotsDir+POF+"_stackedPostfit_"+region+".pdf")
+  c.SaveAs(plotsDir+POF+"_stackedPostfit_"+region+".png")
+  c.SaveAs(plotsDir+POF+"_stackedPostfit_"+region+".C")
 
   #c.SaveAs("test.pdf")
 
@@ -698,6 +738,7 @@ def plotPreFitPostFit(region):
   #del process
   #del colors
   #del h_prefit
+
 
 
 plotPreFitPostFit("singlemuonw")
@@ -714,6 +755,5 @@ plotPreFitPostFit("dielectron")
 plotPreFitPostFit("dielectron_fail")
 
 
-#plotPreFitPostFit("photon")
-
-#plotPreFitPostFit("signal") ### fitting to real data now!
+plotPreFitPostFit("signal") ### fitting to real data now!
+plotPreFitPostFit("signal_fail")
