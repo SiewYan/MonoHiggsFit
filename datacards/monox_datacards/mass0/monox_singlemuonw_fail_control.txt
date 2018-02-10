@@ -34,9 +34,9 @@ track_mu  lnN           1.005     1.005     1.005     1.005     1.005     1.005
 mass0_wjetseff param 0.0316 0.001264
 mass0_wlneffSF  extArg 1.0 [0.0,10.0]
 wlnfailmuon rateParam wmn_fail wjets ((1.0-@0*@1)/(1.0-@1)) mass0_wlneffSF,mass0_wjetseff
-mass0_ttbareff param 0.1678 0.0001
-mass0_ttbareffSF  extArg 1.03 [0.96,1.1]
-ttbarfailmuon_2 rateParam wmn_fail ttbar ((1.0-@0*@1)/(1.0-@1)) mass0_ttbareffSF,mass0_ttbareff
+ttbareff param 0.1678 0.0001
+ttbareffSF  extArg 1.03 [0.96,1.1]
+ttbarfailmuon_2 rateParam wmn_fail ttbar ((1.0-@0*@1)/(1.0-@1)) ttbareffSF,ttbareff
 monox_mass0_stat_error_singlemuontopwfailModel_bin0 param 0.0 1
 monox_mass0_stat_error_singlemuontopwfailModel_bin1 param 0.0 1
 monox_mass0_stat_error_singlemuontopwfailModel_bin2 param 0.0 1

@@ -31,9 +31,9 @@ trig_met   lnN		1.01      1.01      1.01      1.01      1.01      -
 track_mu   lnN		1.005     1.005     1.005     1.005     1.005     1.005
 -------------------------------------------------------------------------------------------------
 # Parametric uncertainties associated to control regions fits
-mass0_ttbareff param 0.1678 0.0001
-mass0_ttbareffSF  extArg 1.03 [0.96,1.1]
-ttbarpassmuon rateParam tmn ttbar (@0*1.0) mass0_ttbareffSF
+ttbareff param 0.1678 0.0001
+ttbareffSF  extArg 1.03 [0.96,1.1]
+ttbarpassmuon rateParam tmn ttbar (@0*1.0) ttbareffSF
 mass0_wjetseff param 0.0316 0.001264
 mass0_wlneffSF  extArg 1.0 [0.0,10.0]
 wlnpassmuon_2 rateParam tmn wjets (@0*1.0) mass0_wlneffSF
