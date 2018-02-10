@@ -37,10 +37,6 @@ wlnfailelectron rateParam wen_fail wjets ((1.0-@0*@1)/(1.0-@1)) mass0_wlneffSF,m
 ttbareff param 0.1678 0.0001
 ttbareffSF  extArg 1.03 [0.96,1.1]
 ttbarfailelectron_2 rateParam wen_fail ttbar ((1.0-@0*@1)/(1.0-@1)) ttbareffSF,ttbareff
-monox_mass0_stat_error_singleelectrontopwfailModel_bin0 param 0.0 1
-monox_mass0_stat_error_singleelectrontopwfailModel_bin1 param 0.0 1
-monox_mass0_stat_error_singleelectrontopwfailModel_bin2 param 0.0 1
-monox_mass0_stat_error_singleelectrontopwfailModel_bin3 param 0.0 1
 monox_mass0_stat_error_singleelectronwfailModel_bin0 param 0.0 1
 monox_mass0_stat_error_singleelectronwfailModel_bin1 param 0.0 1
 monox_mass0_stat_error_singleelectronwfailModel_bin2 param 0.0 1

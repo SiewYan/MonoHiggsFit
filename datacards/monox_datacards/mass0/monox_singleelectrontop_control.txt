@@ -41,9 +41,5 @@ monox_mass0_stat_error_singleelectrontopModelCR_bin0 param 0.0 1
 monox_mass0_stat_error_singleelectrontopModelCR_bin1 param 0.0 1
 monox_mass0_stat_error_singleelectrontopModelCR_bin2 param 0.0 1
 monox_mass0_stat_error_singleelectrontopModelCR_bin3 param 0.0 1
-monox_mass0_stat_error_singleelectronwtopModelCR_bin0 param 0.0 1
-monox_mass0_stat_error_singleelectronwtopModelCR_bin1 param 0.0 1
-monox_mass0_stat_error_singleelectronwtopModelCR_bin2 param 0.0 1
-monox_mass0_stat_error_singleelectronwtopModelCR_bin3 param 0.0 1
 btag param 0.0 1
 mistag param 0.0 1
