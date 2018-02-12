@@ -8,7 +8,7 @@ kmax * number of nuisance parameters
 shapes *         ten_fail  ../../../combined_model.root combinedws:monox_mass0_fail_singleelectrontop_$PROCESS combinedws:monox_mass0_fail_singleelectrontop_$PROCESS_$SYSTEMATIC
 shapes data_obs  ten_fail  ../../../combined_model.root combinedws:monox_mass0_fail_singleelectrontop_data
 shapes ttbar     ten_fail  ../../../combined_model.root combinedws:monox_mass0_fail_singleelectrontopModel_ttbar_model
-shapes wjet      ten_fail  ../../../combined_model.root combinedws:monox_mass0_fail_singleelectrontopwModel_wjet_model
+shapes wjets      ten_fail  ../../../combined_model.root combinedws:monox_mass0_fail_singleelectrontopwModel_wjets_model
 -------------------------------------------------------------------------------------------------
 bin 	     ten_fail
 observation  -1 
