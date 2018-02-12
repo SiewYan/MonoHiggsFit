@@ -8,7 +8,7 @@ kmax * number of nuisance parameters
 shapes *         wmn       ../../../combined_model.root combinedws:monox_mass0_singlemuonw_$PROCESS combinedws:monox_mass0_singlemuonw_$PROCESS_$SYSTEMATIC
 shapes data_obs  wmn       ../../../combined_model.root combinedws:monox_mass0_singlemuonw_data
 shapes wjets     wmn       ../../../combined_model.root combinedws:monox_mass0_singlemuonwModel_wjets_model
-#shapes ttbar     wmn       ../../../combined_model.root combinedws:monox_mass0_singlemuonwtopModel_ttbar_model
+shapes ttbar     wmn       ../../../combined_model.root combinedws:monox_mass0_singlemuonwtopModel_ttbar_model
 -------------------------------------------------------------------------------------------------
 bin 	     wmn
 observation  -1 
@@ -42,5 +42,9 @@ monox_mass0_stat_error_singlemuonwModel_bin0 param 0.0 1
 monox_mass0_stat_error_singlemuonwModel_bin1 param 0.0 1
 monox_mass0_stat_error_singlemuonwModel_bin2 param 0.0 1
 monox_mass0_stat_error_singlemuonwModel_bin3 param 0.0 1
+monox_mass0_stat_error_singlemuonwtopModel_bin0 param 0.0 1
+monox_mass0_stat_error_singlemuonwtopModel_bin1 param 0.0 1
+monox_mass0_stat_error_singlemuonwtopModel_bin2 param 0.0 1
+monox_mass0_stat_error_singlemuonwtopModel_bin3 param 0.0 1
 btag param 0.0 1
 mistag param 0.0 1

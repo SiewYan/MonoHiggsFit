@@ -7,7 +7,7 @@ kmax * number of nuisance parameters
 -------------------------------------------------------------------------------------------------
 shapes *         tmn_fail  ../../../combined_model.root combinedws:monox_mass0_fail_singlemuontop_$PROCESS combinedws:monox_mass0_fail_singlemuontop_$PROCESS_$SYSTEMATIC
 shapes data_obs  tmn_fail  ../../../combined_model.root combinedws:monox_mass0_fail_singlemuontop_data
-#shapes wjets     tmn_fail  ../../../combined_model.root combinedws:monox_mass0_fail_singlemuontopwModel_wjets_model
+shapes wjets     tmn_fail  ../../../combined_model.root combinedws:monox_mass0_fail_singlemuontopwModel_wjets_model
 shapes ttbar     tmn_fail  ../../../combined_model.root combinedws:monox_mass0_fail_singlemuontopModel_ttbar_model
 -------------------------------------------------------------------------------------------------
 bin 	     tmn_fail
@@ -42,5 +42,9 @@ monox_mass0_stat_error_singlemuontopfailModelCR_bin0 param 0.0 1
 monox_mass0_stat_error_singlemuontopfailModelCR_bin1 param 0.0 1
 monox_mass0_stat_error_singlemuontopfailModelCR_bin2 param 0.0 1
 monox_mass0_stat_error_singlemuontopfailModelCR_bin3 param 0.0 1
+monox_mass0_stat_error_singlemuontopwfailModelCR_bin0 param 0.0 1
+monox_mass0_stat_error_singlemuontopwfailModelCR_bin1 param 0.0 1
+monox_mass0_stat_error_singlemuontopwfailModelCR_bin2 param 0.0 1
+monox_mass0_stat_error_singlemuontopwfailModelCR_bin3 param 0.0 1
 btag param 0.0 1
 mistag param 0.0 1
