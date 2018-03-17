@@ -1,7 +1,7 @@
 # Configuration for a simple monojet topology. Use this as a template for your own Run-2 mono-X analysis
 
 # First provide ouput file name in out_file_name field 
-out_file_name = 'mono-x02.root'
+out_file_name = 'mono-x1.root'
 
 # can define any thing useful here which may be common to several categories, eg binning in MET 
 bins = [250,270,350,475,1000]
@@ -24,12 +24,10 @@ systematics=["btag","mistag"]
 
 #  OPTIONAL --> 'extra_cuts': additional cuts maybe specific to this control region (eg ptpho cuts) if this key is missing, the code will not complain   
  
-monox_doublebp_mass0_category = {
-	    'name':"monox_mass0"
+monox_doublebp_mass1_category = {
+	    'name':"monox_mass1"
             ,'in_file_name':"/uscms_data/d1/shoh/panda/v_8029_DarkHiggs_v2/flat/limits/fittingForest_all.root"
-            #,"cutstring":"n2ddt56<0 && fjmass>50 && fjmass<75"
-            #,"cutstring":"n2ddt56<0 && fjmass>25"
-            ,"cutstring":"n2ddt56<0 && fjmass>25 && fjmass<75"
+            ,"cutstring":"n2ddt56<0 && fjmass>75 && fjmass<100"
             ,"varstring":["min(999.9999,met)",200,1000]
        	    ,"weightname":"weight"
 	    ,"bins":bins[:]
@@ -47,68 +45,92 @@ monox_doublebp_mass0_category = {
 		  ,"ST_signal"                 :['signal','stop',1,0]
 		  ,"QCD_signal"		       :['signal','qcd',1,0]
 		  ,"Data_signal"	       :['signal','data',0,0]
-
-                  #Zprime --> 3000 GeV                                                                                                                               
-                  ,"hsDM_3000_50_50_signal"    :['signal','hsDM-3000-50-50_signal',1,1]
-                  ,"hsDM_3000_50_100_signal"    :['signal','hsDM-3000-50-100_signal',1,1]
-                  ,"hsDM_3000_50_150_signal"    :['signal','hsDM-3000-50-150_signal',1,1]
-                  ,"hsDM_3000_50_200_signal"    :['signal','hsDM-3000-50-200_signal',1,1]
-                  ,"hsDM_3000_50_250_signal"    :['signal','hsDM-3000-50-250_signal',1,1]
-                  ,"hsDM_3000_50_300_signal"    :['signal','hsDM-3000-50-300_signal',1,1]
-                  ,"hsDM_3000_50_400_signal"    :['signal','hsDM-3000-50-400_signal',1,1]
-
-                  ,"hsDM_3000_70_50_signal"    :['signal','hsDM-3000-70-50_signal',1,1]
-                  ,"hsDM_3000_70_100_signal"    :['signal','hsDM-3000-70-100_signal',1,1]
-                  ,"hsDM_3000_70_150_signal"    :['signal','hsDM-3000-70-150_signal',1,1]
-                  ,"hsDM_3000_70_200_signal"    :['signal','hsDM-3000-70-200_signal',1,1]
-                  ,"hsDM_3000_70_250_signal"    :['signal','hsDM-3000-70-250_signal',1,1]
-                  ,"hsDM_3000_70_300_signal"    :['signal','hsDM-3000-70-300_signal',1,1]
-                  ,"hsDM_3000_70_400_signal"    :['signal','hsDM-3000-70-400_signal',1,1]
-
-                  ,"hsDM_3000_90_50_signal"    :['signal','hsDM-3000-90-50_signal',1,1]
-                  ,"hsDM_3000_90_100_signal"    :['signal','hsDM-3000-90-100_signal',1,1]
-                  ,"hsDM_3000_90_150_signal"    :['signal','hsDM-3000-90-150_signal',1,1]
-                  ,"hsDM_3000_90_200_signal"    :['signal','hsDM-3000-90-200_signal',1,1]
-                  ,"hsDM_3000_90_250_signal"    :['signal','hsDM-3000-90-250_signal',1,1]
-                  ,"hsDM_3000_90_300_signal"    :['signal','hsDM-3000-90-300_signal',1,1]
-                  ,"hsDM_3000_90_400_signal"    :['signal','hsDM-3000-90-400_signal',1,1]
-
-                  #Mono-Z'
-                  ,"ZpDM_50_150_10_signal"    :['signal','ZpDM-50-150-10_signal',1,1]
-                  ,"ZpDM_50_50_10_signal"    :['signal','ZpDM-50-50-10_signal',1,1]
-
-                  ,"ZpDM_100_150_10_signal"    :['signal','ZpDM-100-150-10_signal',1,1]
-                  ,"ZpDM_100_50_10_signal"    :['signal','ZpDM-100-50-10_signal',1,1]
-
-                  ,"ZpDM_300_150_10_signal"    :['signal','ZpDM-300-150-10_signal',1,1]
-                  ,"ZpDM_300_50_10_signal"    :['signal','ZpDM-300-50-10_signal',1,1]
-
-                  ,"ZpDM_500_150_10_signal"    :['signal','ZpDM-500-150-10_signal',1,1]
-                  ,"ZpDM_500_50_10_signal"    :['signal','ZpDM-500-50-10_signal',1,1]
+		  # signals 
+                  ,"hsDM_1000_50_100_signal"    :['signal','hsDM-1000-50-100_signal',1,1]
+                  ,"hsDM_1000_50_200_signal"    :['signal','hsDM-1000-50-200_signal',1,1]
+                  ,"hsDM_1000_50_250_signal"    :['signal','hsDM-1000-50-250_signal',1,1]
+                  ,"hsDM_1000_50_300_signal"    :['signal','hsDM-1000-50-300_signal',1,1]
 
                   ,"ZpDM_1000_150_10_signal"    :['signal','ZpDM-1000-150-10_signal',1,1]
                   ,"ZpDM_1000_50_10_signal"    :['signal','ZpDM-1000-50-10_signal',1,1]
-
+                  #,"ZpDM_100_150_10_signal"    :['signal','ZpDM-100-150-10_signal',1,1]
+                  #,"ZpDM_100_50_10_signal"    :['signal','ZpDM-100-50-10_signal',1,1]
                   ,"ZpDM_1500_150_10_signal"    :['signal','ZpDM-1500-150-10_signal',1,1]
                   ,"ZpDM_1500_50_10_signal"    :['signal','ZpDM-1500-50-10_signal',1,1]
-
                   ,"ZpDM_2000_150_10_signal"    :['signal','ZpDM-2000-150-10_signal',1,1]
                   ,"ZpDM_2000_50_10_signal"    :['signal','ZpDM-2000-50-10_signal',1,1]
-
                   ,"ZpDM_2500_150_10_signal"    :['signal','ZpDM-2500-150-10_signal',1,1]
-                  ,"ZpDM_2500_50_10_signal"    :['signal','ZpDM-2500-50-10_signal',1,1]
+                  #,"ZpDM_3000_150_10_signal"    :['signal','ZpDM-3000-150-10_signal',1,1]
+                  #,"ZpDM_3000_50_10_signal"    :['signal','ZpDM-3000-50-10_signal',1,1]
+                  #,"ZpDM_300_150_10_signal"    :['signal','ZpDM-300-150-10_signal',1,1]
 
-                  ,"ZpDM_3000_150_10_signal"    :['signal','ZpDM-3000-150-10_signal',1,1]
-                  ,"ZpDM_3000_50_10_signal"    :['signal','ZpDM-3000-50-10_signal',1,1]
+		  # Di muon-Control
+#                  ,"VH_zmm"                    :['dimuon','vh',1,0] 
+                  ,"Zll_zmm"	               :['dimuon','zll',1,1]
+ 		  ,"Wlv_zmm"      	       :['dimuon','wjets',1,0]
+		  ,"Diboson_zmm"    	       :['dimuon','dibosons',1,0]
+		  ,"ttbar_zmm"    	       :['dimuon','ttbar',1,0]
+		  ,"ST_zmm"                    :['dimuon','stop',1,0]
+		  ,"QCD_zmm"		       :['dimuon','qcd',1,0]
+		  ,"Data_zmm"    	       :['dimuon','data',0,0]
+		  # Single muon (top) control
+#                  ,"VH_tm"                     :['singlemuontop','vh',1,0] 
+#                  ,"ttH_tm"                    :['singlemuontop','tth',1,0] 
+                  ,"Zll_tmn"       	       :['singlemuontop','zll',1,0]
+ 		  ,"Wlv_tmn"                    :['singlemuontop','wjets',1,0]
+		  ,"Diboson_tmn"                :['singlemuontop','dibosons',1,0]
+		  ,"ttbar_tmn"                  :['singlemuontop','ttbar',1,1]
+		  ,"ST_tmn"                     :['singlemuontop','stop',1,0]
+		  ,"QCD_tmn"                    :['singlemuontop','qcd',1,0]
+		  ,"Data_tmn"        	       :['singlemuontop','data',0,0]
 
+                   # Single muon (w) control
+#                  ,"VH_wmn"                    :['singlemuonw','vh',1,0] 
+                  ,"Zll_wmn"     	       :['singlemuonw','zll',1,0]
+ 		  ,"Wlv_wmn"      	       :['singlemuonw','wjets',1,0]
+		  ,"Diboson_wmn"               :['singlemuonw','dibosons',1,0]
+		  ,"ttbar_wmn"                 :['singlemuonw','ttbar',1,0]
+		  ,"ST_wmn"                    :['singlemuonw','stop',1,0]
+		  ,"QCD_wmn"	               :['singlemuonw','qcd',1,0]
+		  ,"Data_wmn"	               :['singlemuonw','data',0,0]
+
+		  # Di electron-Control
+#                  ,"VH_zee"                    :['dielectron','vh',1,0] 
+                  ,"Zll_zee"	               :['dielectron','zll',1,0]
+ 		  ,"Wlv_zee"  	               :['dielectron','wjets',1,0]
+		  ,"Diboson_zee"               :['dielectron','dibosons',1,0]
+		  ,"ttbar_zee"                 :['dielectron','ttbar',1,0]
+		  ,"ST_zee"                    :['dielectron','stop',1,0]
+		  ,"QCD_zee"                   :['dielectron','qcd',1,0]
+		  ,"Data_zee"	               :['dielectron','data',0,0]
+
+
+		  # Single electron (top) control
+#                  ,"VH_te"                     :['singleelectrontop','vh',1,0] 
+#                  ,"ttH_te"                    :['singleelectrontop','tth',1,0] 
+                  ,"Zll_ten"                    :['singleelectrontop','zll',1,0]
+                  ,"Wlv_ten"                    :['singleelectrontop','wjets',1,0]
+		  ,"Diboson_ten"                :['singleelectrontop','dibosons',1,0]
+		  ,"ttbar_ten"                  :['singleelectrontop','ttbar',1,0]
+		  ,"ST_ten"                     :['singleelectrontop','stop',1,0]
+		  ,"QCD_ten"                    :['singleelectrontop','qcd',1,0]
+		  ,"Data_ten"                   :['singleelectrontop','data',0,0]
+
+                   # Single electron (w) control
+#                  ,"VH_wen"                    :['singleelectronw','vh',1,0] 
+                  ,"Zll_wen"                   :['singleelectronw','zll',1,0]
+ 		  ,"Wlv_wen"                   :['singleelectronw','wjets',1,0]
+		  ,"Diboson_wen"               :['singleelectronw','dibosons',1,0]
+		  ,"ttbar_wen"                 :['singleelectronw','ttbar',1,0]
+		  ,"ST_wen"                    :['singleelectronw','stop',1,0]
+		  ,"QCD_wen"                   :['singleelectronw','qcd',1,0]
+		  ,"Data_wen"                  :['singleelectronw','data',0,0]
     }
 }
-monox_doublebf_mass0_category = {
-	    'name':"monox_mass0_fail"
+monox_doublebf_mass1_category = {
+	    'name':"monox_mass1_fail"
             ,'in_file_name':"/uscms_data/d1/shoh/panda/v_8029_DarkHiggs_v2/flat/limits/fittingForest_all.root"
-            #,"cutstring":"n2ddt56<0 && fjmass>50 && fjmass<75"
-            #,"cutstring":"n2ddt56<0 && fjmass>25"
-            ,"cutstring":"n2ddt56<0 && fjmass>25 && fjmass<75"
+            ,"cutstring":"n2ddt56<0 && fjmass>75 && fjmass<100"
             ,"varstring":["min(999.9999,met)",200,1000]
        	    ,"weightname":"weight"
 	    ,"bins":bins[:]
@@ -126,7 +148,25 @@ monox_doublebf_mass0_category = {
 		  ,"ST_signal_fail"                 :['signal','stop',1,0]
 		  ,"QCD_signal_fail"		       :['signal','qcd',1,0]
 		  ,"Data_signal_fail"	       :['signal','data',0,0]
-  
+                  #signal
+                  ,"hsDM_1000_50_100_signal_fail"    :['signal','hsDM-1000-50-100_signal',1,1]
+                  ,"hsDM_1000_50_200_signal_fail"    :['signal','hsDM-1000-50-200_signal',1,1]
+                  ,"hsDM_1000_50_250_signal_fail"    :['signal','hsDM-1000-50-250_signal',1,1]
+                  ,"hsDM_1000_50_300_signal_fail"    :['signal','hsDM-1000-50-300_signal',1,1]
+
+                  ,"ZpDM_1000_150_10_signal_fail"    :['signal','ZpDM-1000-150-10_signal',1,1]
+                  ,"ZpDM_1000_50_10_signal_fail"    :['signal','ZpDM-1000-50-10_signal',1,1]
+                  #,"ZpDM_100_150_10_signal_fail"    :['signal','ZpDM-100-150-10_signal',1,1]
+                  #,"ZpDM_100_50_10_signal_fail"    :['signal','ZpDM-100-50-10_signal',1,1]
+                  ,"ZpDM_1500_150_10_signal_fail"    :['signal','ZpDM-1500-150-10_signal',1,1]
+                  ,"ZpDM_1500_50_10_signal_fail"    :['signal','ZpDM-1500-50-10_signal',1,1]
+                  ,"ZpDM_2000_150_10_signal_fail"    :['signal','ZpDM-2000-150-10_signal',1,1]
+                  ,"ZpDM_2000_50_10_signal_fail"    :['signal','ZpDM-2000-50-10_signal',1,1]
+                  ,"ZpDM_2500_150_10_signal_fail"    :['signal','ZpDM-2500-150-10_signal',1,1]
+                  #,"ZpDM_3000_150_10_signal_fail"    :['signal','ZpDM-3000-150-10_signal',1,1]
+                  #,"ZpDM_3000_50_10_signal_fail"    :['signal','ZpDM-3000-50-10_signal',1,1]
+                  #,"ZpDM_300_150_10_signal_fail"    :['signal','ZpDM-300-150-10_signal',1,1]
+
 		  # Di muon-Control_fail
                   ,"Zll_zmm_fail"	       :['dimuon','zll',1,1]
  		  ,"Wlv_zmm_fail"      	       :['dimuon','wjets',1,0]
@@ -183,4 +223,4 @@ monox_doublebf_mass0_category = {
 
     }
 }
-categories = [monox_doublebp_mass0_category,monox_doublebf_mass0_category]
+categories = [monox_doublebp_mass1_category,monox_doublebf_mass1_category]
