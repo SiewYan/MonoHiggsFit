@@ -1,7 +1,7 @@
 # Configuration for a simple monojet topology. Use this as a template for your own Run-2 mono-X analysis
 
 # First provide ouput file name in out_file_name field 
-out_file_name = 'mono-x1.root'
+out_file_name = 'mono-x2f.root'
 
 # can define any thing useful here which may be common to several categories, eg binning in MET 
 bins = [250,270,350,475,1000]
@@ -24,10 +24,10 @@ systematics=["btag","mistag"]
 
 #  OPTIONAL --> 'extra_cuts': additional cuts maybe specific to this control region (eg ptpho cuts) if this key is missing, the code will not complain   
  
-monox_doublebp_mass1_category = {
-	    'name':"monox_mass1"
+monox_doublebp_mass2_category = {
+	    'name':"monox_mass2"
             ,'in_file_name':"/uscms_data/d1/shoh/panda/v_8029_DarkHiggs_v2/flat/limits/fittingForest_all.root"
-            ,"cutstring":"n2ddt56<0 && fjmass>75 && fjmass<100"
+            ,"cutstring":"n2ddt56<0 && fjmass>100 && fjmass<150"
             ,"varstring":["min(999.9999,met)",200,1000]
        	    ,"weightname":"weight"
 	    ,"bins":bins[:]
@@ -48,7 +48,7 @@ monox_doublebp_mass1_category = {
 		  # signals
                   #Mono-hs
                   #Zprime --> 500 GeV
-                  #,"hsDM_500_50_50_signal"    :['signal','hsDM-500-50-50_signal',1,1]
+                  ,"hsDM_500_50_50_signal"    :['signal','hsDM-500-50-50_signal',1,1]
                   ,"hsDM_500_50_100_signal"    :['signal','hsDM-500-50-100_signal',1,1]
                   ,"hsDM_500_50_150_signal"    :['signal','hsDM-500-50-150_signal',1,1]
                   ,"hsDM_500_50_200_signal"    :['signal','hsDM-500-50-200_signal',1,1]
@@ -128,7 +128,7 @@ monox_doublebp_mass1_category = {
                   ,"hsDM_2000_70_50_signal"    :['signal','hsDM-2000-70-50_signal',1,1]
                   ,"hsDM_2000_70_100_signal"    :['signal','hsDM-2000-70-100_signal',1,1]
                   ,"hsDM_2000_70_150_signal"    :['signal','hsDM-2000-70-150_signal',1,1]
-                  #,"hsDM_2000_70_200_signal"    :['signal','hsDM-2000-70-200_signal',1,1]
+                  ,"hsDM_2000_70_200_signal"    :['signal','hsDM-2000-70-200_signal',1,1]
                   ,"hsDM_2000_70_250_signal"    :['signal','hsDM-2000-70-250_signal',1,1]
                   ,"hsDM_2000_70_300_signal"    :['signal','hsDM-2000-70-300_signal',1,1]
                   ,"hsDM_2000_70_400_signal"    :['signal','hsDM-2000-70-400_signal',1,1]
@@ -144,7 +144,7 @@ monox_doublebp_mass1_category = {
                   #Zprime --> 2500 GeV                                                                                                                                                                                            
                   ,"hsDM_2500_50_50_signal"    :['signal','hsDM-2500-50-50_signal',1,1]
                   ,"hsDM_2500_50_100_signal"    :['signal','hsDM-2500-50-100_signal',1,1]
-                  #,"hsDM_2500_50_150_signal"    :['signal','hsDM-2500-50-150_signal',1,1]
+                  ,"hsDM_2500_50_150_signal"    :['signal','hsDM-2500-50-150_signal',1,1]
                   ,"hsDM_2500_50_200_signal"    :['signal','hsDM-2500-50-200_signal',1,1]
                   ,"hsDM_2500_50_250_signal"    :['signal','hsDM-2500-50-250_signal',1,1]
                   ,"hsDM_2500_50_300_signal"    :['signal','hsDM-2500-50-300_signal',1,1]
@@ -219,6 +219,7 @@ monox_doublebp_mass1_category = {
                   ,"ZpDM_3000_150_10_signal"    :['signal','ZpDM-3000-150-10_signal',1,1]
                   ,"ZpDM_3000_50_10_signal"    :['signal','ZpDM-3000-50-10_signal',1,1]
 
+
 		  # Di muon-Control
 #                  ,"VH_zmm"                    :['dimuon','vh',1,0] 
                   ,"Zll_zmm"	               :['dimuon','zll',1,1]
@@ -282,10 +283,10 @@ monox_doublebp_mass1_category = {
 		  ,"Data_wen"                  :['singleelectronw','data',0,0]
     }
 }
-monox_doublebf_mass1_category = {
-	    'name':"monox_mass1_fail"
+monox_doublebf_mass2_category = {
+	    'name':"monox_mass2_fail"
             ,'in_file_name':"/uscms_data/d1/shoh/panda/v_8029_DarkHiggs_v2/flat/limits/fittingForest_all.root"
-            ,"cutstring":"n2ddt56<0 && fjmass>75 && fjmass<100"
+            ,"cutstring":"n2ddt56<0 && fjmass>100 && fjmass<150"
             ,"varstring":["min(999.9999,met)",200,1000]
        	    ,"weightname":"weight"
 	    ,"bins":bins[:]
@@ -303,8 +304,6 @@ monox_doublebf_mass1_category = {
 		  ,"ST_signal_fail"                 :['signal','stop',1,0]
 		  ,"QCD_signal_fail"		       :['signal','qcd',1,0]
 		  ,"Data_signal_fail"	       :['signal','data',0,0]
-  
-
                   #Mono-hs
                   #Zprime --> 500 GeV
                   ,"hsDM_500_50_50_signal_fail"    :['signal','hsDM-500-50-50_signal',1,1]
@@ -400,7 +399,7 @@ monox_doublebf_mass1_category = {
                   ,"hsDM_2000_90_300_signal_fail"    :['signal','hsDM-2000-90-300_signal',1,1]
                   ,"hsDM_2000_90_400_signal_fail"    :['signal','hsDM-2000-90-400_signal',1,1]
 
-                  #Zprime --> 2500 GeV                                                                                                                                                                                            
+                  #Zprime --> 2500 GeV                                                                                                                        
                   ,"hsDM_2500_50_50_signal_fail"    :['signal','hsDM-2500-50-50_signal',1,1]
                   ,"hsDM_2500_50_100_signal_fail"    :['signal','hsDM-2500-50-100_signal',1,1]
                   ,"hsDM_2500_50_150_signal_fail"    :['signal','hsDM-2500-50-150_signal',1,1]
@@ -478,6 +477,7 @@ monox_doublebf_mass1_category = {
                   ,"ZpDM_3000_150_10_signal_fail"    :['signal','ZpDM-3000-150-10_signal',1,1]
                   ,"ZpDM_3000_50_10_signal_fail"    :['signal','ZpDM-3000-50-10_signal',1,1]
 
+
 		  # Di muon-Control_fail
                   ,"Zll_zmm_fail"	       :['dimuon','zll',1,1]
  		  ,"Wlv_zmm_fail"      	       :['dimuon','wjets',1,0]
@@ -534,4 +534,4 @@ monox_doublebf_mass1_category = {
 
     }
 }
-categories = [monox_doublebp_mass1_category,monox_doublebf_mass1_category]
+categories = [monox_doublebf_mass2_category]

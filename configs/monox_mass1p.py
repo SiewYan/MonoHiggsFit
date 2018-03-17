@@ -1,7 +1,7 @@
 # Configuration for a simple monojet topology. Use this as a template for your own Run-2 mono-X analysis
 
 # First provide ouput file name in out_file_name field 
-out_file_name = 'mono-x1.root'
+out_file_name = 'mono-x1p.root'
 
 # can define any thing useful here which may be common to several categories, eg binning in MET 
 bins = [250,270,350,475,1000]
@@ -48,7 +48,7 @@ monox_doublebp_mass1_category = {
 		  # signals
                   #Mono-hs
                   #Zprime --> 500 GeV
-                  #,"hsDM_500_50_50_signal"    :['signal','hsDM-500-50-50_signal',1,1]
+                  ,"hsDM_500_50_50_signal"    :['signal','hsDM-500-50-50_signal',1,1]
                   ,"hsDM_500_50_100_signal"    :['signal','hsDM-500-50-100_signal',1,1]
                   ,"hsDM_500_50_150_signal"    :['signal','hsDM-500-50-150_signal',1,1]
                   ,"hsDM_500_50_200_signal"    :['signal','hsDM-500-50-200_signal',1,1]
@@ -128,7 +128,7 @@ monox_doublebp_mass1_category = {
                   ,"hsDM_2000_70_50_signal"    :['signal','hsDM-2000-70-50_signal',1,1]
                   ,"hsDM_2000_70_100_signal"    :['signal','hsDM-2000-70-100_signal',1,1]
                   ,"hsDM_2000_70_150_signal"    :['signal','hsDM-2000-70-150_signal',1,1]
-                  #,"hsDM_2000_70_200_signal"    :['signal','hsDM-2000-70-200_signal',1,1]
+                  ,"hsDM_2000_70_200_signal"    :['signal','hsDM-2000-70-200_signal',1,1]
                   ,"hsDM_2000_70_250_signal"    :['signal','hsDM-2000-70-250_signal',1,1]
                   ,"hsDM_2000_70_300_signal"    :['signal','hsDM-2000-70-300_signal',1,1]
                   ,"hsDM_2000_70_400_signal"    :['signal','hsDM-2000-70-400_signal',1,1]
@@ -144,7 +144,7 @@ monox_doublebp_mass1_category = {
                   #Zprime --> 2500 GeV                                                                                                                                                                                            
                   ,"hsDM_2500_50_50_signal"    :['signal','hsDM-2500-50-50_signal',1,1]
                   ,"hsDM_2500_50_100_signal"    :['signal','hsDM-2500-50-100_signal',1,1]
-                  #,"hsDM_2500_50_150_signal"    :['signal','hsDM-2500-50-150_signal',1,1]
+                  ,"hsDM_2500_50_150_signal"    :['signal','hsDM-2500-50-150_signal',1,1]
                   ,"hsDM_2500_50_200_signal"    :['signal','hsDM-2500-50-200_signal',1,1]
                   ,"hsDM_2500_50_250_signal"    :['signal','hsDM-2500-50-250_signal',1,1]
                   ,"hsDM_2500_50_300_signal"    :['signal','hsDM-2500-50-300_signal',1,1]
@@ -304,7 +304,6 @@ monox_doublebf_mass1_category = {
 		  ,"QCD_signal_fail"		       :['signal','qcd',1,0]
 		  ,"Data_signal_fail"	       :['signal','data',0,0]
   
-
                   #Mono-hs
                   #Zprime --> 500 GeV
                   ,"hsDM_500_50_50_signal_fail"    :['signal','hsDM-500-50-50_signal',1,1]
@@ -534,4 +533,4 @@ monox_doublebf_mass1_category = {
 
     }
 }
-categories = [monox_doublebp_mass1_category,monox_doublebf_mass1_category]
+categories = [monox_doublebp_mass1_category]
