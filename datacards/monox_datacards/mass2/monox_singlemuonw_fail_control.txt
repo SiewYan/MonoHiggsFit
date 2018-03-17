@@ -8,6 +8,7 @@ kmax * number of nuisance parameters
 shapes *         wmn_fail  ../../../combined_model.root combinedws:monox_mass2_fail_singlemuonw_$PROCESS combinedws:monox_mass2_fail_singlemuonw_$PROCESS_$SYSTEMATIC
 shapes data_obs  wmn_fail  ../../../combined_model.root combinedws:monox_mass2_fail_singlemuonw_data
 shapes wjets     wmn_fail  ../../../combined_model.root combinedws:monox_mass2_fail_singlemuonwModel_wjets_model
+#shapes ttbar     wmn_fail  ../../../combined_model.root combinedws:monox_mass2_fail_singlemuonwtopModel_ttbar_model
 -------------------------------------------------------------------------------------------------
 bin 	     wmn_fail
 observation  -1 
@@ -34,16 +35,16 @@ track_mu  lnN           1.005     1.005     1.005     1.005     1.005     1.005
 mass2_wjetseff param 0.0316 0.001264
 mass2_wlneffSF  extArg 1.0 [0.0,10.0]
 wlnfailmuon rateParam wmn_fail wjets ((1.0-@0*@1)/(1.0-@1)) mass2_wlneffSF,mass2_wjetseff
-mass2_ttbareff param 0.1678 0.0001
-mass2_ttbareffSF  extArg 1.03 [0.96,1.1]
-ttbarfailmuon_2 rateParam wmn_fail ttbar ((1.0-@0*@1)/(1.0-@1)) mass2_ttbareffSF,mass2_ttbareff
-monox_mass2_stat_error_singlemuontopwfailModel_bin0 param 0.0 1
-monox_mass2_stat_error_singlemuontopwfailModel_bin1 param 0.0 1
-monox_mass2_stat_error_singlemuontopwfailModel_bin2 param 0.0 1
-monox_mass2_stat_error_singlemuontopwfailModel_bin3 param 0.0 1
+ttbareff param 0.1678 0.0001
+ttbareffSF  extArg 1.03 [0.96,1.1]
+ttbarfailmuon_2 rateParam wmn_fail ttbar ((1.0-@0*@1)/(1.0-@1)) ttbareffSF,ttbareff
 monox_mass2_stat_error_singlemuonwfailModel_bin0 param 0.0 1
 monox_mass2_stat_error_singlemuonwfailModel_bin1 param 0.0 1
 monox_mass2_stat_error_singlemuonwfailModel_bin2 param 0.0 1
 monox_mass2_stat_error_singlemuonwfailModel_bin3 param 0.0 1
+#monox_mass2_stat_error_singlemuonwtopfailModel_bin0 param 0.0 1
+#monox_mass2_stat_error_singlemuonwtopfailModel_bin1 param 0.0 1
+#monox_mass2_stat_error_singlemuonwtopfailModel_bin2 param 0.0 1
+#monox_mass2_stat_error_singlemuonwtopfailModel_bin3 param 0.0 1
 btag param 0.0 1
 mistag param 0.0 1

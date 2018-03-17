@@ -323,6 +323,7 @@ class Channel:
       self.wspace_out._import(cont)
 
     sfup = self.scalefactors.GetName()+"_%s_"%name+"Up"
+    print "sfup = ", sfup
     sfdn = self.scalefactors.GetName()+"_%s_"%name+"Down"
     print "Looking for systematic shapes ... %s,%s"%(sfup,sfdn)
     sysup,sysdn =  file.Get(sfup),file.Get(sfdn)
@@ -341,6 +342,9 @@ class Channel:
 	 vu=0
 	 vd=0
 	else:
+         print "self.scalefactors.GetBinContent(b+1)= ", self.scalefactors.GetBinContent(b+1)
+         print "nsf = ", 1./(self.scalefactors.GetBinContent(b+1))
+         print "sysup.GetBinContent(b+1) = ", sysup.GetBinContent(b+1)
     	 nsf = 1./(self.scalefactors.GetBinContent(b+1))
 	 vu = 1./(sysup.GetBinContent(b+1)) - nsf 
 
